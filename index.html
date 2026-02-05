@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Cuotas</title>
+    <title>Al Día</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
@@ -52,6 +52,38 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 25px;
+            gap: 20px;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .header-title {
+            color: white;
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .header-subtitle {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95em;
+            font-weight: 400;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .header-author {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.85em;
+            font-weight: 500;
         }
 
         h1 {
@@ -154,6 +186,33 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .header-title {
+                font-size: 1.8em;
+            }
+
+            .header-subtitle {
+                font-size: 0.9em;
+            }
+
+            .header-right {
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .header-author {
+                font-size: 0.8em;
+            }
         }
 
         @media (min-width: 900px) {
@@ -450,8 +509,14 @@
 <body>
     <div class="container">
         <div class="top-bar">
-            <h1>💳 Mis Cuotas</h1>
-            <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+            <div class="header-left">
+                <div class="header-title">💳 Al Día</div>
+                <div class="header-subtitle">Controlá cuotas y gastos mensuales</div>
+            </div>
+            <div class="header-right">
+                <div class="header-author">Joaquín Gastón Castillo</div>
+                <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+            </div>
         </div>
 
         <div class="search-box">
@@ -459,15 +524,15 @@
                 type="text" 
                 id="searchBox" 
                 class="search-input" 
-                placeholder="🔍 Buscar cuota o gasto..."
+                placeholder="🔍 Buscar gastos, cuotas o categorías…"
             >
         </div>
 
         <div class="main-grid">
             <div class="card">
                 <div class="tab-nav">
-                    <button class="tab-btn active" onclick="cambiarTab('cuotas')">Cuota</button>
-                    <button class="tab-btn" onclick="cambiarTab('fijos')">Gasto Fijo</button>
+                    <button class="tab-btn active" onclick="cambiarTab('cuotas')">Cuotas</button>
+                    <button class="tab-btn" onclick="cambiarTab('fijos')">Gastos fijos</button>
                 </div>
 
                 <div id="tabCuotas" class="tab-content active">
@@ -529,19 +594,19 @@
             </div>
 
             <div class="card">
-                <h2>📋 Mis Pagos</h2>
+                <h2>📋 Próximos pagos</h2>
                 <div id="listaCuotas" class="cuotas-lista"></div>
             </div>
         </div>
 
         <div class="summary">
             <div class="summary-item">
-                <h3>Este Mes</h3>
+                <h3>Total del mes</h3>
                 <div class="number" id="totalMes">$0</div>
                 <div class="subtitle">A pagar</div>
             </div>
             <div class="summary-item">
-                <h3>Próximo Mes</h3>
+                <h3>Proyección próxima</h3>
                 <div class="number" id="totalProximo">$0</div>
                 <div class="subtitle">A pagar</div>
             </div>
@@ -959,7 +1024,7 @@
                 }
             });
 
-            let texto = '📋 MIS CUOTAS\n\n';
+            let texto = '📋 AL DÍA\n\n';
             let totalMesActual = 0;
             const mesActual = getMes(0);
 
