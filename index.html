@@ -555,9 +555,130 @@
                 padding: 20px;
             }
         }
+
+        /* Modal styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content h2 {
+            color: var(--text);
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .modal-actions .btn {
+            flex: 1;
+        }
+
+        /* Action buttons in cuota cards */
+        .cuota-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.1em;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 5px;
+            transition: all 0.2s;
+        }
+
+        .action-btn:hover {
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--accent);
+        }
+
+        .action-btn.success {
+            color: #2ecc71;
+        }
+
+        .action-btn.success:hover {
+            background: rgba(46, 204, 113, 0.1);
+            color: #27ae60;
+        }
+
+        .action-btn.danger {
+            color: #ff4757;
+        }
+
+        .action-btn.danger:hover {
+            background: rgba(255, 71, 87, 0.1);
+        }
     </style>
 </head>
 <body>
+    <!-- Modal de edición -->
+    <div id="editModal" class="modal-overlay" onclick="if(event.target === this) cerrarModal()">
+        <div class="modal-content">
+            <h2 id="modalTitle">Editar</h2>
+            <form id="editForm" class="simple-form">
+                <div class="input-group">
+                    <label>Nombre</label>
+                    <input type="text" id="editNombre" required>
+                </div>
+                <div class="input-group">
+                    <label>Categoría</label>
+                    <select id="editCategoria" required>
+                        <option value="ropa">👕 Ropa</option>
+                        <option value="tecnologia">💻 Tecnología</option>
+                        <option value="hogar">🏠 Hogar</option>
+                        <option value="entretenimiento">🎮 Entretenimiento</option>
+                        <option value="salud">💊 Salud</option>
+                        <option value="educacion">📚 Educación</option>
+                        <option value="servicios">💡 Servicios</option>
+                        <option value="suscripciones">📺 Suscripciones</option>
+                        <option value="transporte">🚗 Transporte</option>
+                        <option value="otro">📦 Otro</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label id="editMontoLabel">Monto</label>
+                    <input type="number" id="editMonto" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-add">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="container">
         <div class="top-bar">
             <div class="header-left">
@@ -615,6 +736,14 @@
                             <label>Cantidad de Cuotas</label>
                             <input type="number" id="cuotas" placeholder="12" min="1" required>
                         </div>
+                        <div class="input-group">
+                            <label>¿Por qué cuota vas?</label>
+                            <input type="number" id="cuotaActualInput" placeholder="1" min="1" value="1" required>
+                        </div>
+                        <div class="input-group">
+                            <label>¿Hace cuántos meses empezó?</label>
+                            <input type="number" id="inicioHaceMesesInput" placeholder="0" min="0" value="0" required>
+                        </div>
                         <button type="submit" class="btn btn-add">+ Agregar Cuota</button>
                     </form>
                 </div>
@@ -645,6 +774,9 @@
                 </div>
 
                 <button class="btn btn-secondary" onclick="copiarLista()">📋 Copiar Lista</button>
+                <button class="btn btn-secondary" onclick="exportarDatos()">⬇️ Exportar</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">⬆️ Importar</button>
+                <input type="file" id="importFile" accept=".json" style="display:none" onchange="importarDatos(event)">
                 <button class="btn btn-danger" onclick="borrarTodo()">🗑️ Borrar Todo</button>
             </div>
 
@@ -1006,7 +1138,10 @@
                             </div>
                             <div class="cuota-info">
                                 <span class="cuota-detalle">Gasto mensual</span>
-                                <button class="delete-btn" onclick="borrarFijo(${f.idx})">✕</button>
+                                <div class="cuota-actions">
+                                    <button class="action-btn" onclick="editarItem('fijo', ${f.idx})" title="Editar">✏️</button>
+                                    <button class="action-btn danger" onclick="borrarFijo(${f.idx})" title="Eliminar">✕</button>
+                                </div>
                             </div>
                         </div>
                     `;
@@ -1031,7 +1166,11 @@
                             </div>
                             <div class="cuota-info">
                                 <span class="cuota-detalle">Cuota ${c.actual}/${c.total} • ${restantes} restante${restantes > 1 ? 's' : ''}</span>
-                                <button class="delete-btn" onclick="borrarCuota(${c.idx})">✕</button>
+                                <div class="cuota-actions">
+                                    <button class="action-btn success" onclick="avanzarCuota(${c.idx})" title="Marcar como pagada">✅</button>
+                                    <button class="action-btn" onclick="editarItem('cuota', ${c.idx})" title="Editar">✏️</button>
+                                    <button class="action-btn danger" onclick="borrarCuota(${c.idx})" title="Eliminar">✕</button>
+                                </div>
                             </div>
                         </div>
                     `;
@@ -1155,19 +1294,28 @@
             const categoria = document.getElementById('categoria').value;
             const monto = parseFloat(document.getElementById('monto').value);
             const total = parseInt(document.getElementById('cuotas').value);
+            const cuotaActual = parseInt(document.getElementById('cuotaActualInput').value);
+            const startedAgo = parseInt(document.getElementById('inicioHaceMesesInput').value);
             
             if (monto <= 0) {
                 toast('⚠️ El monto debe ser mayor a 0');
                 return;
             }
 
+            if (cuotaActual > total) {
+                toast('⚠️ La cuota actual no puede ser mayor al total');
+                return;
+            }
+
+            const inicio = -(cuotaActual - 1) - startedAgo;
+
             cuotas.push({
                 nombre,
                 categoria,
-                actual: 1,
+                actual: cuotaActual,
                 total,
                 monto: monto / total,
-                inicio: 0,
+                inicio: inicio,
                 fecha: new Date().toISOString()
             });
             
@@ -1175,6 +1323,8 @@
             mostrar();
             updateChart();
             e.target.reset();
+            document.getElementById('cuotaActualInput').value = 1;
+            document.getElementById('inicioHaceMesesInput').value = 0;
             toast(`✓ ${nombre} agregado`);
         });
 
@@ -1207,6 +1357,154 @@
         document.getElementById('searchBox').addEventListener('input', () => {
             mostrar();
         });
+
+        // Variables para edición
+        let editandoTipo = null;
+        let editandoIdx = null;
+
+        // Función para avanzar cuota (marcar como pagada)
+        function avanzarCuota(idx) {
+            const item = cuotas[idx];
+            item.actual += 1;
+            
+            if (item.actual > item.total) {
+                cuotas.splice(idx, 1);
+                toast(`✓ ${item.nombre} completada`);
+            } else {
+                toast(`✓ Cuota avanzada a ${item.actual}/${item.total}`);
+            }
+            
+            guardar();
+            mostrar();
+            updateChart();
+        }
+
+        // Función para abrir modal de edición
+        function editarItem(tipo, idx) {
+            editandoTipo = tipo;
+            editandoIdx = idx;
+            
+            const item = tipo === 'cuota' ? cuotas[idx] : fijos[idx];
+            
+            document.getElementById('modalTitle').textContent = tipo === 'cuota' ? 'Editar Cuota' : 'Editar Gasto Fijo';
+            document.getElementById('editNombre').value = item.nombre;
+            document.getElementById('editCategoria').value = item.categoria;
+            
+            if (tipo === 'cuota') {
+                document.getElementById('editMontoLabel').textContent = 'Monto Total';
+                document.getElementById('editMonto').value = item.monto * item.total;
+            } else {
+                document.getElementById('editMontoLabel').textContent = 'Monto Mensual';
+                document.getElementById('editMonto').value = item.monto;
+            }
+            
+            document.getElementById('editModal').classList.add('show');
+        }
+
+        // Función para cerrar modal
+        function cerrarModal() {
+            document.getElementById('editModal').classList.remove('show');
+            document.getElementById('editForm').reset();
+            editandoTipo = null;
+            editandoIdx = null;
+        }
+
+        // Handler para guardar edición
+        document.getElementById('editForm').addEventListener('submit', e => {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('editNombre').value.trim();
+            const categoria = document.getElementById('editCategoria').value;
+            const monto = parseFloat(document.getElementById('editMonto').value);
+            
+            if (monto <= 0) {
+                toast('⚠️ El monto debe ser mayor a 0');
+                return;
+            }
+            
+            if (editandoTipo === 'cuota') {
+                const item = cuotas[editandoIdx];
+                item.nombre = nombre;
+                item.categoria = categoria;
+                item.monto = monto / item.total;
+            } else {
+                const item = fijos[editandoIdx];
+                item.nombre = nombre;
+                item.categoria = categoria;
+                item.monto = monto;
+            }
+            
+            guardar();
+            mostrar();
+            updateChart();
+            cerrarModal();
+            toast('✓ Cambios guardados');
+        });
+
+        // Función para exportar datos
+        function exportarDatos() {
+            const datos = {
+                cuotas: cuotas,
+                fijos: fijos,
+                theme: localStorage.getItem('theme') || 'light',
+                version: 'al-dia-1'
+            };
+            
+            const json = JSON.stringify(datos, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `al-dia-backup-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            toast('✓ Datos exportados');
+        }
+
+        // Función para importar datos
+        function importarDatos(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = e => {
+                try {
+                    const datos = JSON.parse(e.target.result);
+                    
+                    if (!datos.cuotas || !datos.fijos) {
+                        toast('⚠️ Archivo inválido');
+                        return;
+                    }
+                    
+                    cuotas = datos.cuotas || [];
+                    fijos = datos.fijos || [];
+                    
+                    if (datos.theme) {
+                        localStorage.setItem('theme', datos.theme);
+                        if (datos.theme === 'dark') {
+                            document.body.classList.add('dark-mode');
+                            document.getElementById('themeIcon').textContent = '☀️';
+                        } else {
+                            document.body.classList.remove('dark-mode');
+                            document.getElementById('themeIcon').textContent = '🌙';
+                        }
+                    }
+                    
+                    guardar();
+                    mostrar();
+                    updateChart();
+                    toast('✓ Datos importados');
+                    
+                } catch (error) {
+                    toast('⚠️ Error al importar');
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
 
         // Iniciar
         loadTheme();
