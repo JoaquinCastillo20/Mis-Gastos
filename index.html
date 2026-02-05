@@ -589,36 +589,25 @@
         }
 
         function cargar() {
-            const version = '2.2'; // Versión de los datos
-            const savedVersion = localStorage.getItem('cuotasVersion');
+            // Iniciar sin datos guardados
             const c = localStorage.getItem('cuotas');
             const f = localStorage.getItem('fijos');
             
-            // Si no hay datos guardados o la versión cambió, cargar datos de ejemplo
-            if (!c || JSON.parse(c).length === 0 || savedVersion !== version) {
-                cuotas = [
-                    { nombre: "Billabong", categoria: "ropa", actual: 2, total: 6, monto: 21666, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Levi's", categoria: "ropa", actual: 2, total: 6, monto: 92000, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Reloj Ivi", categoria: "otro", actual: 2, total: 6, monto: 16467, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Cristobal Colon", categoria: "ropa", actual: 2, total: 3, monto: 103332, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Anteojos", categoria: "salud", actual: 2, total: 3, monto: 39000, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Campera AFA", categoria: "ropa", actual: 2, total: 6, monto: 35000, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Camiseta y short Atomik", categoria: "ropa", actual: 2, total: 6, monto: 28300, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Liverpool", categoria: "ropa", actual: 2, total: 9, monto: 13333, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Tabla", categoria: "entretenimiento", actual: 2, total: 6, monto: 19000, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Mochila", categoria: "otro", actual: 2, total: 6, monto: 26650, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Sporting", categoria: "ropa", actual: 2, total: 9, monto: 21150, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Adidas", categoria: "ropa", actual: 2, total: 6, monto: 33999, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Sporting 2", categoria: "ropa", actual: 2, total: 9, monto: 10433, inicio: -1, fecha: new Date().toISOString() },
-                    { nombre: "Licuadora", categoria: "hogar", actual: 2, total: 6, monto: 16667, inicio: -1, fecha: new Date().toISOString() }
-                ];
-                localStorage.setItem('cuotasVersion', version);
-                guardar();
-            } else {
-                cuotas = JSON.parse(c);
+            if (c) {
+                try {
+                    cuotas = JSON.parse(c);
+                } catch (e) {
+                    cuotas = [];
+                }
             }
             
-            if (f) fijos = JSON.parse(f);
+            if (f) {
+                try {
+                    fijos = JSON.parse(f);
+                } catch (e) {
+                    fijos = [];
+                }
+            }
         }
 
         function toast(msg) {
