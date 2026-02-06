@@ -233,7 +233,7 @@
         .simple-form {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
             margin-bottom: 20px;
         }
 
@@ -245,1851 +245,7 @@
         .input-group label {
             color: var(--text-light);
             font-size: 0.9em;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .input-group input,
-        .input-group select {
-            padding: 12px;
-            border: 2px solid var(--border);
-            border-radius: 10px;
-            font-size: 1em;
-            background: var(--card-bg);
-            color: var(--text);
-            transition: border 0.3s;
-        }
-
-        .input-group input:focus,
-        .input-group select:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .input-helper {
-            font-size: 0.8em;
-            color: var(--text-lighter);
-            margin-top: 4px;
-        }
-
-        .btn {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-add {
-            background: var(--accent);
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .btn-add:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: var(--border);
-            color: var(--text);
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-        .btn-secondary:hover {
-            background: var(--text-light);
-            color: white;
-        }
-
-        .btn-danger {
-            background: #ff4757;
-            color: white;
-            margin-top: 20px;
-            width: 100%;
-        }
-
-        .btn-danger:hover {
-            background: #ff3838;
-        }
-
-        .filter-chips {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .chip-btn {
-            padding: 8px 16px;
-            border: 2px solid var(--border);
-            background: transparent;
-            color: var(--text-light);
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .chip-btn.active {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        .cuotas-lista {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .mes-grupo {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .mes-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 18px;
-            background: var(--accent);
-            color: white;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.95em;
-        }
-
-        .cuota-card {
-            background: var(--card-bg);
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            padding: 15px;
-            transition: all 0.3s;
-        }
-
-        .cuota-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .cuota-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-        }
-
-        .cuota-nombre {
-            font-weight: 600;
-            color: var(--text);
-            font-size: 1.05em;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            align-items: center;
-        }
-
-        .cuota-monto {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: var(--accent);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 2px;
-        }
-
-        .cuota-monto-total {
-            font-size: 0.65em;
-            font-weight: 500;
-            color: var(--text-lighter);
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 6px;
-            font-size: 0.7em;
-            font-weight: 600;
-        }
-
-        .badge-fijo {
-            background: #ffd93d;
-            color: #333;
-        }
-
-        .badge-cat {
-            background: var(--border);
-            color: var(--text-light);
-        }
-
-        .badge-atrasada {
-            background: #ff6b6b;
-            color: white;
-        }
-
-        .badge-ultima {
-            background: #51cf66;
-            color: white;
-        }
-
-        .cuota-card.mes-actual {
-            border-color: var(--accent);
-            border-width: 3px;
-            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(102, 126, 234, 0.05) 100%);
-        }
-
-        body.dark-mode .cuota-card.mes-actual {
-            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(85, 104, 211, 0.15) 100%);
-        }
-
-        .progreso-bar {
-            height: 6px;
-            background: var(--border);
-            border-radius: 3px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-
-        .progreso-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent), #5568d3);
-            transition: width 0.3s;
-        }
-
-        .cuota-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cuota-detalle {
-            font-size: 0.85em;
-            color: var(--text-lighter);
-        }
-
-        .cuota-actions {
-            display: flex;
-            gap: 8px;
-        }
-
-        .action-btn {
-            background: var(--border);
-            border: none;
-            padding: 6px 10px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.1em;
-            transition: all 0.3s;
-        }
-
-        .action-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .action-btn.success {
-            background: #4CAF50;
-        }
-
-        .action-btn.success:hover {
-            background: #45a049;
-        }
-
-        .action-btn.danger {
-            background: #ff4757;
-            color: white;
-        }
-
-        .action-btn.danger:hover {
-            background: #ff3838;
-        }
-
-        .empty {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-lighter);
-        }
-
-        .empty-icon {
-            font-size: 4em;
-            margin-bottom: 15px;
-        }
-
-        .empty-text {
-            font-size: 1.1em;
-        }
-
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: var(--text);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            z-index: 1000;
-            opacity: 0;
-            transition: all 0.3s;
-        }
-
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-
-        .summary {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .summary-item {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .summary-item h3 {
-            color: var(--text-light);
-            font-size: 0.85em;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .summary-item .number {
-            color: var(--accent);
-            font-size: 2em;
-            font-weight: bold;
-        }
-
-        .summary-item .subtitle {
-            color: var(--text-lighter);
-            font-size: 0.8em;
-            margin-top: 5px;
-        }
-
-        .chart-card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .chart-card h2 {
-            color: var(--text);
-            margin-bottom: 20px;
-            font-size: 1.3em;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 999;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal.show {
-            display: flex;
-        }
-
-        .modal-content {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .modal-header h2 {
-            margin: 0;
-            color: var(--text);
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            color: var(--text-light);
-            padding: 0;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-close:hover {
-            color: var(--text);
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .modal-actions .btn {
-            flex: 1;
-            margin: 0;
-        }
-
-        .meses-anteriores {
-            margin-top: 20px;
-            border: 2px solid var(--border);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .meses-anteriores-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 18px;
-            background: var(--border);
-            color: var(--text);
-            font-weight: 600;
-            font-size: 0.95em;
-            cursor: pointer;
-            user-select: none;
-            transition: all 0.3s;
-        }
-
-        .meses-anteriores-header:hover {
-            background: var(--text-light);
-            color: white;
-        }
-
-        .meses-anteriores[open] .meses-anteriores-header {
-            background: var(--text-light);
-            color: white;
-        }
-
-        .meses-anteriores summary {
-            list-style: none;
-        }
-
-        .meses-anteriores summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .meses-anteriores summary::before {
-            content: '▶ ';
-            display: inline-block;
-            margin-right: 5px;
-            transition: transform 0.3s;
-        }
-
-        .meses-anteriores[open] summary::before {
-            transform: rotate(90deg);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="top-bar">
-            <div class="header-left">
-                <h1 class="header-title">💳 Al Día</h1>
-                <p class="header-subtitle">Controlá cuotas y gastos mensuales</p>
-            </div>
-            <div class="header-right">
-                <span class="header-author">Joaquín Gastón Castillo</span>
-                <button class="theme-btn" onclick="toggleTheme()">
-                    <span id="themeIcon">🌙</span>
-                    <span>Tema</span>
-                </button>
-            </div>
-        </div>
-
-        <div class="search-box">
-            <label class="search-label">BUSCAR</label>
-            <input 
-                type="text" 
-                id="searchBox" 
-                class="search-input" 
-                placeholder="🔍 Buscar gastos, cuotas o categorías…"
-            >
-        </div>
-
-        <div class="main-grid">
-            <div class="card">
-                <div class="tab-nav">
-                    <button class="tab-btn active" onclick="cambiarTab('cuotas')">Cuotas</button>
-                    <button class="tab-btn" onclick="cambiarTab('fijos')">Gastos fijos</button>
-                </div>
-
-                <div id="tabCuotas" class="tab-content active">
-                    <form id="formCuotas" class="simple-form">
-                        <div class="input-group">
-                            <label>¿Qué compraste?</label>
-                            <input type="text" id="nombre" placeholder="Ej: Notebook" required>
-                        </div>
-                        <div class="input-group">
-                            <label>Categoría</label>
-                            <select id="categoria" required>
-                                <option value="tecnologia">💻 Tecnología</option>
-                                <option value="ropa">👕 Ropa</option>
-                                <option value="hogar">🏠 Hogar</option>
-                                <option value="salud">💊 Salud</option>
-                                <option value="entretenimiento">🎮 Entretenimiento</option>
-                                <option value="educacion">📚 Educación</option>
-                                <option value="transporte">🚗 Transporte</option>
-                                <option value="otro">📦 Otro</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label>Monto Total</label>
-                            <input type="number" id="monto" placeholder="50000" step="0.01" required>
-                        </div>
-                        <div class="input-group">
-                            <label>Cantidad de Cuotas</label>
-                            <input type="number" id="cuotas" placeholder="12" min="1" required>
-                        </div>
-                        <div class="input-group">
-                            <label>¿Por qué cuota vas?</label>
-                            <input type="number" id="cuotaActualInput" placeholder="1" min="1" value="1" required>
-                            <span class="input-helper">Si vas por la cuota 6, este mes se registra como 6/12</span>
-                        </div>
-                        <button type="submit" class="btn btn-add">+ Agregar Cuota</button>
-                    </form>
-                </div>
-
-                <div id="tabFijos" class="tab-content">
-                    <form id="formFijos" class="simple-form">
-                        <div class="input-group">
-                            <label>Nombre del Gasto</label>
-                            <input type="text" id="nombreFijo" placeholder="Ej: Gimnasio" required>
-                        </div>
-                        <div class="input-group">
-                            <label>Categoría</label>
-                            <select id="categoriaFijo" required>
-                                <option value="servicios">💡 Servicios</option>
-                                <option value="suscripciones">📺 Suscripciones</option>
-                                <option value="tecnologia">💻 Tecnología</option>
-                                <option value="salud">💊 Salud</option>
-                                <option value="educacion">📚 Educación</option>
-                                <option value="transporte">🚗 Transporte</option>
-                                <option value="otro">📦 Otro</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label>Monto Mensual</label>
-                            <input type="number" id="montoFijo" placeholder="5000" step="0.01" required>
-                        </div>
-                        <button type="submit" class="btn btn-add">+ Agregar Gasto Fijo</button>
-                    </form>
-                </div>
-
-                <button class="btn btn-secondary" onclick="copiarLista()">📋 Copiar Lista</button>
-                <button class="btn btn-secondary" onclick="exportarDatos()">⬇️ Exportar</button>
-                <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">⬆️ Importar</button>
-                <input type="file" id="importFile" accept=".json" style="display:none" onchange="importarDatos(event)">
-                <button class="btn btn-danger" onclick="borrarTodo()">🗑️ Borrar Todo</button>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="card">
-                    <h2>📋 Próximas cuotas</h2>
-                    <div id="listaCuotas" class="cuotas-lista"></div>
-                </div>
-                
-                <div class="card">
-                    <h2>📌 Gastos fijos del mes</h2>
-                    <div id="listaFijos" class="cuotas-lista"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="summary">
-            <div class="summary-item">
-                <h3>Total del mes</h3>
-                <div class="number" id="totalMes">$0</div>
-                <div class="subtitle">A pagar</div>
-            </div>
-            <div class="summary-item">
-                <h3>Próximo mes</h3>
-                <div class="number" id="totalProximo">$0</div>
-                <div class="subtitle">Proyección</div>
-            </div>
-            <div class="summary-item">
-                <h3>Cuotas</h3>
-                <div class="number" id="cantCuotas">0</div>
-                <div class="subtitle">Activas</div>
-            </div>
-            <div class="summary-item">
-                <h3>Gastos Fijos</h3>
-                <div class="number" id="cantFijos">0</div>
-                <div class="subtitle">Mensuales</div>
-            </div>
-        </div>
-
-        <div class="chart-card">
-            <h2>📊 Próximos 6 meses</h2>
-            <canvas id="myChart"></canvas>
-        </div>
-    </div>
-
-    <div class="toast" id="toast"></div>
-
-    <div id="editModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">Editar</h2>
-                <button class="modal-close" onclick="cerrarModal()">×</button>
-            </div>
-            <form id="editForm" class="simple-form">
-                <div class="input-group">
-                    <label>Nombre</label>
-                    <input type="text" id="editNombre" required>
-                </div>
-                <div class="input-group">
-                    <label>Categoría</label>
-                    <select id="editCategoria" required>
-                        <option value="tecnologia">💻 Tecnología</option>
-                        <option value="ropa">👕 Ropa</option>
-                        <option value="hogar">🏠 Hogar</option>
-                        <option value="salud">💊 Salud</option>
-                        <option value="entretenimiento">🎮 Entretenimiento</option>
-                        <option value="educacion">📚 Educación</option>
-                        <option value="transporte">🚗 Transporte</option>
-                        <option value="servicios">💡 Servicios</option>
-                        <option value="suscripciones">📺 Suscripciones</option>
-                        <option value="otro">📦 Otro</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label id="editMontoLabel">Monto</label>
-                    <input type="number" id="editMonto" step="0.01" required>
-                </div>
-                <div class="modal-actions">
-                    <button type="submit" class="btn btn-add">💾 Guardar</button>
-                    <button type="button" class="btn btn-secondary" onclick="cerrarModal()">❌ Cancelar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        // Categorías unificadas
-        const CATS = {
-            tecnologia: { nombre: 'Tecnología', icono: '💻' },
-            ropa: { nombre: 'Ropa', icono: '👕' },
-            hogar: { nombre: 'Hogar', icono: '🏠' },
-            salud: { nombre: 'Salud', icono: '💊' },
-            entretenimiento: { nombre: 'Entretenimiento', icono: '🎮' },
-            servicios: { nombre: 'Servicios', icono: '💡' },
-            suscripciones: { nombre: 'Suscripciones', icono: '📺' },
-            educacion: { nombre: 'Educación', icono: '📚' },
-            transporte: { nombre: 'Transporte', icono: '🚗' },
-            otro: { nombre: 'Otro', icono: '📦' },
-            // Mapeo de valores antiguos para migración automática
-            tech: { nombre: 'Tecnología', icono: '💻', migrateTo: 'tecnologia' }
-        };
-
-        let cuotas = [];
-        let fijos = [];
-        let myChart = null;
-
-        function guardar() {
-            localStorage.setItem('cuotas', JSON.stringify(cuotas));
-            localStorage.setItem('fijos', JSON.stringify(fijos));
-        }
-
-        function cargar() {
-            const c = localStorage.getItem('cuotas');
-            const f = localStorage.getItem('fijos');
-            
-            if (c) {
-                try {
-                    cuotas = JSON.parse(c);
-                    // Migrar categorías antiguas y validar
-                    cuotas = cuotas.filter(item => {
-                        if (!item || typeof item !== 'object') return false;
-                        
-                        // Migrar categoría si es necesaria
-                        if (item.categoria && CATS[item.categoria]?.migrateTo) {
-                            item.categoria = CATS[item.categoria].migrateTo;
-                        }
-                        
-                        // Validar datos básicos
-                        if (!item.nombre || !item.categoria || !CATS[item.categoria]) return false;
-                        if (isNaN(item.monto) || item.monto <= 0) return false;
-                        if (isNaN(item.actual) || isNaN(item.total) || item.actual > item.total) return false;
-                        
-                        return true;
-                    });
-                } catch (e) {
-                    cuotas = [];
-                    toast('⚠️ Error al cargar cuotas');
-                }
-            }
-            
-            if (f) {
-                try {
-                    fijos = JSON.parse(f);
-                    // Migrar categorías antiguas y validar
-                    fijos = fijos.filter(item => {
-                        if (!item || typeof item !== 'object') return false;
-                        
-                        // Migrar categoría si es necesaria
-                        if (item.categoria && CATS[item.categoria]?.migrateTo) {
-                            item.categoria = CATS[item.categoria].migrateTo;
-                        }
-                        
-                        // Validar datos básicos
-                        if (!item.nombre || !item.categoria || !CATS[item.categoria]) return false;
-                        if (isNaN(item.monto) || item.monto <= 0) return false;
-                        
-                        return true;
-                    });
-                } catch (e) {
-                    fijos = [];
-                    toast('⚠️ Error al cargar gastos fijos');
-                }
-            }
-        }
-
-        function toast(msg) {
-            const t = document.getElementById('toast');
-            t.textContent = msg;
-            t.classList.add('show');
-            setTimeout(() => t.classList.remove('show'), 2500);
-        }
-
-        function cambiarTab(tab) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            
-            if (tab === 'cuotas') {
-                document.querySelector('.tab-btn:first-child').classList.add('active');
-                document.getElementById('tabCuotas').classList.add('active');
-            } else {
-                document.querySelector('.tab-btn:last-child').classList.add('active');
-                document.getElementById('tabFijos').classList.add('active');
-            }
-        }
-
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            document.getElementById('themeIcon').textContent = isDark ? '☀️' : '🌙';
-            updateChart();
-        }
-
-        function loadTheme() {
-            const theme = localStorage.getItem('theme');
-            if (theme === 'dark') {
-                document.body.classList.add('dark-mode');
-                document.getElementById('themeIcon').textContent = '☀️';
-            }
-        }
-
-        function formatMoney(n) {
-            if (isNaN(n)) n = 0;
-            return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-        }
-
-        function getMes(offset) {
-            const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-            const hoy = new Date();
-            const mes = (hoy.getMonth() + offset) % 12;
-            const año = hoy.getFullYear() + Math.floor((hoy.getMonth() + offset) / 12);
-            return `${meses[mes < 0 ? mes + 12 : mes]} ${año}`;
-        }
-
-        function calcular() {
-            let totalMes = 0;
-            let totalProximo = 0;
-            
-            cuotas.forEach(c => {
-                // Este mes (offset 0)
-                const pagoNumeroEnMesActual = (0 - c.inicio) + 1;
-                if (pagoNumeroEnMesActual >= 1 && pagoNumeroEnMesActual <= c.total && pagoNumeroEnMesActual >= c.actual) {
-                    totalMes += c.monto;
-                }
-                
-                // Próximo mes (offset 1)
-                const pagoNumeroEnProximoMes = (1 - c.inicio) + 1;
-                if (pagoNumeroEnProximoMes >= 1 && pagoNumeroEnProximoMes <= c.total && pagoNumeroEnProximoMes >= c.actual) {
-                    totalProximo += c.monto;
-                }
-            });
-            
-            fijos.forEach(f => {
-                totalMes += f.monto;
-                totalProximo += f.monto;
-            });
-            
-            document.getElementById('totalMes').textContent = formatMoney(totalMes);
-            document.getElementById('totalProximo').textContent = formatMoney(totalProximo);
-            document.getElementById('cantCuotas').textContent = cuotas.length;
-            document.getElementById('cantFijos').textContent = fijos.length;
-        }
-
-        function updateChart() {
-            const labels = [];
-            const dataCuotas = [];
-            const dataFijos = [];
-            
-            for (let i = 0; i < 6; i++) {
-                labels.push(getMes(i));
-                let totalCuotas = 0;
-                let totalFijos = 0;
-                
-                cuotas.forEach(c => {
-                    const cuotaEnEsteMes = c.actual + i;
-                    if (cuotaEnEsteMes <= c.total) {
-                        const offset = c.inicio + (cuotaEnEsteMes - 1);
-                        if (offset === i) totalCuotas += c.monto;
-                    }
-                });
-                
-                fijos.forEach(f => totalFijos += f.monto);
-                
-                dataCuotas.push(totalCuotas);
-                dataFijos.push(totalFijos);
-            }
-            
-            const isDark = document.body.classList.contains('dark-mode');
-            const textColor = isDark ? '#e0e0e0' : '#333';
-            const gridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)';
-            
-            if (myChart) myChart.destroy();
-            
-            const ctx = document.getElementById('myChart').getContext('2d');
-            myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels,
-                    datasets: [
-                        {
-                            label: 'Gastos Fijos',
-                            data: dataFijos,
-                            backgroundColor: 'rgba(255, 193, 7, 0.8)',
-                            borderColor: 'rgba(255, 193, 7, 1)',
-                            borderWidth: 2,
-                            borderRadius: 8
-                        },
-                        {
-                            label: 'Cuotas',
-                            data: dataCuotas,
-                            backgroundColor: 'rgba(102, 126, 234, 0.8)',
-                            borderColor: 'rgba(102, 126, 234, 1)',
-                            borderWidth: 2,
-                            borderRadius: 8
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        legend: { 
-                            display: true,
-                            labels: {
-                                color: textColor,
-                                padding: 15,
-                                font: {
-                                    size: 12,
-                                    weight: '600'
-                                }
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.dataset.label + ': ' + formatMoney(context.parsed.y);
-                                },
-                                footer: function(tooltipItems) {
-                                    let total = 0;
-                                    tooltipItems.forEach(item => total += item.parsed.y);
-                                    return 'Total: ' + formatMoney(total);
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            stacked: true,
-                            ticks: { color: textColor },
-                            grid: { display: false }
-                        },
-                        y: {
-                            stacked: true,
-                            beginAtZero: true,
-                            ticks: {
-                                callback: v => formatMoney(v),
-                                color: textColor
-                            },
-                            grid: { color: gridColor }
-                        }
-                    }
-                }
-            });
-        }
-
-        function getCategoriaNombre(categoria) {
-            if (!categoria || !CATS[categoria]) return 'Otro';
-            return CATS[categoria].nombre;
-        }
-
-        function mostrar() {
-            mostrarCuotas();
-            mostrarFijos();
-        }
-
-        function mostrarCuotas() {
-            const lista = document.getElementById('listaCuotas');
-            const buscar = document.getElementById('searchBox').value.toLowerCase().trim();
-            
-            if (cuotas.length === 0) {
-                // Update header with counter
-                const cuotasHeader = lista.closest('.card').querySelector('h2');
-                if (cuotasHeader) {
-                    cuotasHeader.innerHTML = `📋 Próximas cuotas <span style="font-size: 0.7em; color: var(--text-light); font-weight: 500;">(0)</span>`;
-                }
-                lista.innerHTML = `
-                    <div class="empty">
-                        <div class="empty-icon">💳</div>
-                        <div class="empty-text">No hay cuotas</div>
-                    </div>
-                `;
-                return;
-            }
-            
-            // Agrupar cuotas por offset (mes)
-            const porOffset = {};
-            let cuotasVisibles = 0;
-            
-            cuotas.forEach((c, idx) => {
-                // Filtro de búsqueda: nombre o categoría
-                if (buscar) {
-                    const nombreMatch = c.nombre.toLowerCase().includes(buscar);
-                    const catNombre = getCategoriaNombre(c.categoria).toLowerCase();
-                    const catMatch = catNombre.includes(buscar);
-                    if (!nombreMatch && !catMatch) return;
-                }
-                
-                cuotasVisibles++;
-                const offset = c.inicio + (c.actual - 1);
-                if (!porOffset[offset]) {
-                    porOffset[offset] = { cuotas: [], mes: getMes(offset) };
-                }
-                porOffset[offset].cuotas.push({ ...c, idx });
-            });
-            
-            // Update header with counter
-            const cuotasHeader = lista.closest('.card').querySelector('h2');
-            if (cuotasHeader) {
-                if (buscar && cuotasVisibles !== cuotas.length) {
-                    cuotasHeader.innerHTML = `📋 Próximas cuotas <span style="font-size: 0.7em; color: var(--text-light); font-weight: 500;">(${cuotasVisibles}/${cuotas.length})</span>`;
-                } else {
-                    cuotasHeader.innerHTML = `📋 Próximas cuotas <span style="font-size: 0.7em; color: var(--text-light); font-weight: 500;">(${cuotas.length})</span>`;
-                }
-            }
-
-            if (Object.keys(porOffset).length === 0) {
-                lista.innerHTML = `
-                    <div class="empty">
-                        <div class="empty-icon">🔍</div>
-                        <div class="empty-text">No se encontró nada</div>
-                    </div>
-                `;
-                return;
-            }
-
-            // Separar meses: actuales/futuros vs anteriores
-            const offsetsOrdenados = Object.keys(porOffset).map(Number).sort((a, b) => a - b);
-            const offsetsActualesYFuturos = offsetsOrdenados.filter(o => o >= 0);
-            const offsetsAnteriores = offsetsOrdenados.filter(o => o < 0).sort((a, b) => b - a); // Más reciente primero
-
-            let html = '';
-            
-            // Meses actuales y futuros
-            offsetsActualesYFuturos.forEach(offset => {
-                const data = porOffset[offset];
-                const total = data.cuotas.reduce((s, c) => s + c.monto, 0);
-                
-                html += `
-                    <div class="mes-grupo">
-                        <div class="mes-header">
-                            <span>${data.mes.toUpperCase()}</span>
-                            <span>${formatMoney(total)}</span>
-                        </div>
-                `;
-
-                data.cuotas.forEach(c => {
-                    const progreso = (c.actual / c.total) * 100;
-                    const restantes = c.total - c.actual;
-                    const cat = CATS[c.categoria] || CATS.otro;
-                    const montoTotal = c.monto * c.total;
-                    const esUltima = c.actual === c.total;
-                    const claseMesActual = offset === 0 ? ' mes-actual' : '';
-                    
-                    html += `
-                        <div class="cuota-card${claseMesActual}">
-                            <div class="cuota-top">
-                                <div class="cuota-nombre">
-                                    ${c.nombre}
-                                    <span class="badge badge-cat">${cat.icono} ${cat.nombre}</span>
-                                    ${esUltima ? '<span class="badge badge-ultima">🏁 Última</span>' : ''}
-                                </div>
-                                <div class="cuota-monto">
-                                    <span>${formatMoney(c.monto)}</span>
-                                    <span class="cuota-monto-total">Total: ${formatMoney(montoTotal)}</span>
-                                </div>
-                            </div>
-                            <div class="progreso-bar">
-                                <div class="progreso-fill" style="width: ${progreso}%"></div>
-                            </div>
-                            <div class="cuota-info">
-                                <span class="cuota-detalle">Cuota ${c.actual}/${c.total} • ${restantes} pago${restantes !== 1 ? 's' : ''} restante${restantes !== 1 ? 's' : ''}</span>
-                                <div class="cuota-actions">
-                                    ${offset === 0 ? `<button class="action-btn success" onclick="avanzarCuota(${c.idx})" title="Marcar como pagada">✅</button>` : ''}
-                                    <button class="action-btn" onclick="editarItem('cuota', ${c.idx})" title="Editar">✏️</button>
-                                    <button class="action-btn danger" onclick="borrarCuota(${c.idx})" title="Eliminar">✕</button>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                html += '</div>';
-            });
-
-            // Meses anteriores (colapsable)
-            if (offsetsAnteriores.length > 0) {
-                const totalAnteriores = offsetsAnteriores.reduce((sum, offset) => {
-                    return sum + porOffset[offset].cuotas.reduce((s, c) => s + c.monto, 0);
-                }, 0);
-                
-                html += `
-                    <details class="meses-anteriores">
-                        <summary class="meses-anteriores-header">
-                            <span>📅 Meses anteriores (${offsetsAnteriores.length})</span>
-                            <span>${formatMoney(totalAnteriores)}</span>
-                        </summary>
-                `;
-                
-                offsetsAnteriores.forEach(offset => {
-                    const data = porOffset[offset];
-                    const total = data.cuotas.reduce((s, c) => s + c.monto, 0);
-                    
-                    html += `
-                        <div class="mes-grupo" style="margin-top: 10px;">
-                            <div class="mes-header">
-                                <span>${data.mes.toUpperCase()}</span>
-                                <span>${formatMoney(total)}</span>
-                            </div>
-                    `;
-
-                    data.cuotas.forEach(c => {
-                        const progreso = (c.actual / c.total) * 100;
-                        const restantes = c.total - c.actual;
-                        const cat = CATS[c.categoria] || CATS.otro;
-                        const montoTotal = c.monto * c.total;
-                        const esUltima = c.actual === c.total;
-                        
-                        html += `
-                            <div class="cuota-card">
-                                <div class="cuota-top">
-                                    <div class="cuota-nombre">
-                                        ${c.nombre}
-                                        <span class="badge badge-atrasada">⚠️ Atrasada</span>
-                                        <span class="badge badge-cat">${cat.icono} ${cat.nombre}</span>
-                                        ${esUltima ? '<span class="badge badge-ultima">🏁 Última</span>' : ''}
-                                    </div>
-                                    <div class="cuota-monto">
-                                        <span>${formatMoney(c.monto)}</span>
-                                        <span class="cuota-monto-total">Total: ${formatMoney(montoTotal)}</span>
-                                    </div>
-                                </div>
-                                <div class="progreso-bar">
-                                    <div class="progreso-fill" style="width: ${progreso}%"></div>
-                                </div>
-                                <div class="cuota-info">
-                                    <span class="cuota-detalle">Cuota ${c.actual}/${c.total} • ${restantes} pago${restantes !== 1 ? 's' : ''} restante${restantes !== 1 ? 's' : ''}</span>
-                                    <div class="cuota-actions">
-                                        <button class="action-btn" onclick="editarItem('cuota', ${c.idx})" title="Editar">✏️</button>
-                                        <button class="action-btn danger" onclick="borrarCuota(${c.idx})" title="Eliminar">✕</button>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                    });
-                    
-                    html += '</div>';
-                });
-                
-                html += '</details>';
-            }
-
-            lista.innerHTML = html;
-        }
-
-        function mostrarFijos() {
-            const lista = document.getElementById('listaFijos');
-            const buscar = document.getElementById('searchBox').value.toLowerCase().trim();
-            
-            if (fijos.length === 0) {
-                // Update header with counter
-                const fijosHeader = lista.closest('.card').querySelector('h2');
-                if (fijosHeader) {
-                    fijosHeader.innerHTML = `📌 Gastos fijos del mes <span style="font-size: 0.7em; color: var(--text-light); font-weight: 500;">(0)</span>`;
-                }
-                lista.innerHTML = `
-                    <div class="empty">
-                        <div class="empty-icon">📌</div>
-                        <div class="empty-text">No hay gastos fijos</div>
-                    </div>
-                `;
-                calcular();
-                return;
-            }
-            
-            // Filtrar fijos por búsqueda
-            const fijosFiltrados = fijos.map((f, idx) => ({ ...f, idx })).filter(f => {
-                if (!buscar) return true;
-                const nombreMatch = f.nombre.toLowerCase().includes(buscar);
-                const catNombre = getCategoriaNombre(f.categoria).toLowerCase();
-                const catMatch = catNombre.includes(buscar);
-                return nombreMatch || catMatch;
-            });
-            
-            // Update header with counter
-            const fijosHeader = lista.closest('.card').querySelector('h2');
-            if (fijosHeader) {
-                if (buscar && fijosFiltrados.length !== fijos.length) {
-                    fijosHeader.innerHTML = `📌 Gastos fijos del mes <span style="font-size: 0.7em; color: var(--text-light); font-weight: 500;">(${fijosFiltrados.length}/${fijos.length})</span>`;
-                } else {
-                    fijosHeader.innerHTML = `📌 Gastos fijos del mes <span style="font-size: 0.7em; color: var(--text-light); font-weight: 500;">(${fijos.length})</span>`;
-                }
-            }
-
-            if (fijosFiltrados.length === 0) {
-                lista.innerHTML = `
-                    <div class="empty">
-                        <div class="empty-icon">🔍</div>
-                        <div class="empty-text">No se encontró nada</div>
-                    </div>
-                `;
-                calcular();
-                return;
-            }
-
-            const total = fijosFiltrados.reduce((s, f) => s + f.monto, 0);
-            
-            let html = `
-                <div class="mes-grupo">
-                    <div class="mes-header">
-                        <span>MENSUALES</span>
-                        <span>${formatMoney(total)}</span>
-                    </div>
-            `;
-            
-            fijosFiltrados.forEach(f => {
-                const cat = CATS[f.categoria] || CATS.otro;
-                html += `
-                    <div class="cuota-card">
-                        <div class="cuota-top">
-                            <div class="cuota-nombre">
-                                ${f.nombre}
-                                <span class="badge badge-fijo">FIJO</span>
-                                <span class="badge badge-cat">${cat.icono} ${cat.nombre}</span>
-                            </div>
-                            <div class="cuota-monto">${formatMoney(f.monto)}</div>
-                        </div>
-                        <div class="cuota-info">
-                            <span class="cuota-detalle">Gasto mensual</span>
-                            <div class="cuota-actions">
-                                <button class="action-btn" onclick="editarItem('fijo', ${f.idx})" title="Editar">✏️</button>
-                                <button class="action-btn danger" onclick="borrarFijo(${f.idx})" title="Eliminar">✕</button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-            
-            html += '</div>';
-            lista.innerHTML = html;
-            calcular();
-        }
-
-        function borrarCuota(idx) {
-            if (confirm('¿Eliminar esta cuota?')) {
-                const item = cuotas[idx];
-                cuotas.splice(idx, 1);
-                guardar();
-                mostrar();
-                updateChart();
-                toast(`✓ ${item.nombre} eliminado`);
-            }
-        }
-
-        function borrarFijo(idx) {
-            if (confirm('¿Eliminar este gasto fijo?')) {
-                const item = fijos[idx];
-                fijos.splice(idx, 1);
-                guardar();
-                mostrar();
-                updateChart();
-                toast(`✓ ${item.nombre} eliminado`);
-            }
-        }
-
-        function copiarLista() {
-            if (cuotas.length === 0 && fijos.length === 0) {
-                toast('No hay nada para copiar');
-                return;
-            }
-
-            let texto = '📋 AL DÍA\n\n';
-            let totalMesActual = 0;
-
-            // Sección 1: PRÓXIMAS CUOTAS (agrupadas por mes)
-            if (cuotas.length > 0) {
-                texto += '📋 PRÓXIMAS CUOTAS\n';
-                texto += '═════════════════\n\n';
-                
-                const porOffset = {};
-                cuotas.forEach(c => {
-                    const offset = c.inicio + (c.actual - 1);
-                    if (!porOffset[offset]) {
-                        porOffset[offset] = { cuotas: [], mes: getMes(offset) };
-                    }
-                    porOffset[offset].cuotas.push(c);
-                });
-
-                const offsetsOrdenados = Object.keys(porOffset).map(Number).sort((a, b) => a - b);
-
-                offsetsOrdenados.forEach(offset => {
-                    const data = porOffset[offset];
-                    const totalCuotasMes = data.cuotas.reduce((s, c) => s + c.monto, 0);
-
-                    texto += `${data.mes.toUpperCase()}\n`;
-                    texto += `─────────────────\n`;
-
-                    data.cuotas.forEach(c => {
-                        const cat = CATS[c.categoria] || CATS.otro;
-                        texto += `${c.actual}/${c.total} ${cat.icono} ${c.nombre} - ${formatMoney(c.monto)}\n`;
-                    });
-                    
-                    texto += `\n`;
-                    
-                    if (offset === 0) totalMesActual += totalCuotasMes;
-                });
-            }
-
-            // Sección 2: GASTOS FIJOS (lista simple)
-            if (fijos.length > 0) {
-                texto += '📌 GASTOS FIJOS (MENSUALES)\n';
-                texto += '═════════════════\n\n';
-                
-                const totalFijos = fijos.reduce((s, f) => s + f.monto, 0);
-                
-                fijos.forEach(f => {
-                    const cat = CATS[f.categoria] || CATS.otro;
-                    texto += `🔄 ${cat.icono} ${f.nombre} - ${formatMoney(f.monto)}\n`;
-                });
-                
-                texto += `\n`;
-                totalMesActual += totalFijos;
-            }
-
-            texto += `═════════════════\n`;
-            texto += `TOTAL A PAGAR ESTE MES: ${formatMoney(totalMesActual)}`;
-
-            navigator.clipboard.writeText(texto).then(() => {
-                toast('✓ Lista copiada al portapapeles');
-            }).catch(() => {
-                toast('⚠️ No se pudo copiar');
-            });
-        }
-
-        function borrarTodo() {
-            if (cuotas.length === 0 && fijos.length === 0) {
-                toast('No hay nada para borrar');
-                return;
-            }
-
-            if (confirm('⚠️ ¿Seguro que querés borrar TODOS los datos?\n\nEsta acción no se puede deshacer.')) {
-                cuotas = [];
-                fijos = [];
-                guardar();
-                mostrar();
-                updateChart();
-                toast('✓ Todo borrado');
-            }
-        }
-
-        document.getElementById('formCuotas').addEventListener('submit', e => {
-            e.preventDefault();
-            
-            const nombre = document.getElementById('nombre').value.trim();
-            const categoria = document.getElementById('categoria').value;
-            const monto = parseFloat(document.getElementById('monto').value);
-            const total = parseInt(document.getElementById('cuotas').value);
-            const cuotaActual = parseInt(document.getElementById('cuotaActualInput').value);
-            
-            if (!nombre) {
-                toast('⚠️ Ingresá un nombre');
-                return;
-            }
-            
-            if (isNaN(monto) || monto <= 0) {
-                toast('⚠️ El monto debe ser mayor a 0');
-                return;
-            }
-
-            if (isNaN(total) || total < 1) {
-                toast('⚠️ La cantidad de cuotas debe ser al menos 1');
-                return;
-            }
-
-            if (isNaN(cuotaActual) || cuotaActual < 1) {
-                toast('⚠️ La cuota actual debe ser al menos 1');
-                return;
-            }
-
-            if (cuotaActual > total) {
-                toast('⚠️ La cuota actual no puede ser mayor al total');
-                return;
-            }
-
-            const inicio = -(cuotaActual - 1);
-
-            cuotas.push({
-                nombre,
-                categoria,
-                actual: cuotaActual,
-                total,
-                monto: monto / total,
-                inicio: inicio,
-                fecha: new Date().toISOString()
-            });
-            
-            guardar();
-            mostrar();
-            updateChart();
-            e.target.reset();
-            document.getElementById('cuotaActualInput').value = 1;
-            toast(`✓ ${nombre} agregado`);
-        });
-
-        document.getElementById('formFijos').addEventListener('submit', e => {
-            e.preventDefault();
-            
-            const nombre = document.getElementById('nombreFijo').value.trim();
-            const categoria = document.getElementById('categoriaFijo').value;
-            const monto = parseFloat(document.getElementById('montoFijo').value);
-            
-            if (!nombre) {
-                toast('⚠️ Ingresá un nombre');
-                return;
-            }
-            
-            if (isNaN(monto) || monto <= 0) {
-                toast('⚠️ El monto debe ser mayor a 0');
-                return;
-            }
-
-            fijos.push({
-                nombre,
-                categoria,
-                monto,
-                fecha: new Date().toISOString()
-            });
-            
-            guardar();
-            mostrar();
-            updateChart();
-            e.target.reset();
-            toast(`✓ ${nombre} agregado`);
-        });
-
-        document.getElementById('searchBox').addEventListener('input', () => {
-            mostrar();
-        });
-
-        let editandoTipo = null;
-        let editandoIdx = null;
-
-        function avanzarCuota(idx) {
-            const item = cuotas[idx];
-            if (!item) return;
-            
-            item.actual += 1;
-            
-            if (item.actual > item.total) {
-                cuotas.splice(idx, 1);
-                toast(`✓ ${item.nombre} completada`);
-            } else {
-                toast(`✓ Cuota avanzada a ${item.actual}/${item.total}`);
-            }
-            
-            guardar();
-            mostrar();
-            updateChart();
-        }
-
-        function editarItem(tipo, idx) {
-            editandoTipo = tipo;
-            editandoIdx = idx;
-            
-            const item = tipo === 'cuota' ? cuotas[idx] : fijos[idx];
-            if (!item) return;
-            
-            document.getElementById('modalTitle').textContent = tipo === 'cuota' ? 'Editar Cuota' : 'Editar Gasto Fijo';
-            document.getElementById('editNombre').value = item.nombre;
-            document.getElementById('editCategoria').value = item.categoria;
-            
-            if (tipo === 'cuota') {
-                document.getElementById('editMontoLabel').textContent = 'Monto Total';
-                document.getElementById('editMonto').value = (item.monto * item.total).toFixed(2);
-            } else {
-                document.getElementById('editMontoLabel').textContent = 'Monto Mensual';
-                document.getElementById('editMonto').value = item.monto.toFixed(2);
-            }
-            
-            document.getElementById('editModal').classList.add('show');
-        }
-
-        function cerrarModal() {
-            document.getElementById('editModal').classList.remove('show');
-            document.getElementById('editForm').reset();
-            editandoTipo = null;
-            editandoIdx = null;
-        }
-
-        document.getElementById('editForm').addEventListener('submit', e => {
-            e.preventDefault();
-            
-            const nombre = document.getElementById('editNombre').value.trim();
-            const categoria = document.getElementById('editCategoria').value;
-            const monto = parseFloat(document.getElementById('editMonto').value);
-            
-            if (!nombre) {
-                toast('⚠️ Ingresá un nombre');
-                return;
-            }
-            
-            if (isNaN(monto) || monto <= 0) {
-                toast('⚠️ El monto debe ser mayor a 0');
-                return;
-            }
-            
-            if (editandoTipo === 'cuota') {
-                const item = cuotas[editandoIdx];
-                if (!item) return;
-                item.nombre = nombre;
-                item.categoria = categoria;
-                item.monto = monto / item.total;
-            } else {
-                const item = fijos[editandoIdx];
-                if (!item) return;
-                item.nombre = nombre;
-                item.categoria = categoria;
-                item.monto = monto;
-            }
-            
-            guardar();
-            mostrar();
-            updateChart();
-            cerrarModal();
-            toast('✓ Cambios guardados');
-        });
-
-        function exportarDatos() {
-            const datos = {
-                cuotas: cuotas,
-                fijos: fijos,
-                theme: localStorage.getItem('theme') || 'light',
-                version: 'al-dia-2'
-            };
-            
-            const json = JSON.stringify(datos, null, 2);
-            const blob = new Blob([json], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `al-dia-backup-${new Date().toISOString().split('T')[0]}.json`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            
-            toast('✓ Datos exportados');
-        }
-
-        function importarDatos(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            
-            const reader = new FileReader();
-            reader.onload = e => {
-                try {
-                    const datos = JSON.parse(e.target.result);
-                    
-                    // Validación robusta
-                    if (!datos || typeof datos !== 'object') {
-                        toast('⚠️ Archivo inválido: formato incorrecto');
-                        return;
-                    }
-                    
-                    if (!Array.isArray(datos.cuotas) || !Array.isArray(datos.fijos)) {
-                        toast('⚠️ Archivo inválido: datos corruptos');
-                        return;
-                    }
-                    
-                    // Validar y limpiar cuotas
-                    const cuotasValidas = datos.cuotas.filter(c => {
-                        if (!c || typeof c !== 'object') return false;
-                        if (!c.nombre || typeof c.nombre !== 'string') return false;
-                        if (!c.categoria || typeof c.categoria !== 'string') return false;
-                        if (isNaN(c.monto) || c.monto <= 0) return false;
-                        if (isNaN(c.actual) || isNaN(c.total) || c.actual > c.total) return false;
-                        
-                        // Migrar categorías antiguas
-                        if (CATS[c.categoria]?.migrateTo) {
-                            c.categoria = CATS[c.categoria].migrateTo;
-                        }
-                        
-                        // Validar categoría existe
-                        if (!CATS[c.categoria]) c.categoria = 'otro';
-                        
-                        return true;
-                    });
-                    
-                    // Validar y limpiar fijos
-                    const fijosValidos = datos.fijos.filter(f => {
-                        if (!f || typeof f !== 'object') return false;
-                        if (!f.nombre || typeof f.nombre !== 'string') return false;
-                        if (!f.categoria || typeof f.categoria !== 'string') return false;
-                        if (isNaN(f.monto) || f.monto <= 0) return false;
-                        
-                        // Migrar categorías antiguas
-                        if (CATS[f.categoria]?.migrateTo) {
-                            f.categoria = CATS[f.categoria].migrateTo;
-                        }
-                        
-                        // Validar categoría existe
-                        if (!CATS[f.categoria]) f.categoria = 'otro';
-                        
-                        return true;
-                    });
-                    
-                    cuotas = cuotasValidas;
-                    fijos = fijosValidos;
-                    
-                    if (datos.theme && (datos.theme === 'dark' || datos.theme === 'light')) {
-                        localStorage.setItem('theme', datos.theme);
-                        if (datos.theme === 'dark') {
-                            document.body.classList.add('dark-mode');
-                            document.getElementById('themeIcon').textContent = '☀️';
-                        } else {
-                            document.body.classList.remove('dark-mode');
-                            document.getElementById('themeIcon').textContent = '🌙';
-                        }
-                    }
-                    
-                    guardar();
-                    mostrar();
-                    updateChart();
-                    
-                    const itemsImportados = cuotasValidas.length + fijosValidos.length;
-                    toast(`✓ ${itemsImportados} item${itemsImportados !== 1 ? 's' : ''} importado${itemsImportados !== 1 ? 's' : ''}`);
-                    
-                } catch (error) {
-                    console.error('Error al importar:', error);
-                    toast('⚠️ Error: archivo corrupto o inválido');
-                }
-            };
-            reader.readAsText(file);
-            event.target.value = '';
-        }
-
-        // Iniciar
-        loadTheme();
-        cargar();
-        mostrar();
-        updateChart();
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al Día</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-1: #667eea;
-            --bg-2: #764ba2;
-            --card-bg: white;
-            --text: #333;
-            --text-light: #666;
-            --text-lighter: #999;
-            --border: #e0e0e0;
-            --accent: #667eea;
-        }
-
-        body.dark-mode {
-            --bg-1: #1a1a2e;
-            --bg-2: #16213e;
-            --card-bg: #0f3460;
-            --text: #e0e0e0;
-            --text-light: #b0b0b0;
-            --text-lighter: #808080;
-            --border: #2a2a4e;
-            --accent: #5568d3;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
-            min-height: 100vh;
-            padding: 20px;
-            transition: all 0.3s;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            gap: 20px;
-        }
-
-        .header-left {
-            flex: 1;
-        }
-
-        .header-title {
-            color: white;
-            font-size: 2.2em;
-            font-weight: 700;
-            margin-bottom: 5px;
-            line-height: 1.2;
-        }
-
-        .header-subtitle {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 0.95em;
-            font-weight: 400;
-        }
-
-        .header-right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 8px;
-        }
-
-        .header-author {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.85em;
-            font-weight: 500;
-        }
-
-        .theme-btn {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9em;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-            font-weight: 500;
-        }
-
-        .theme-btn:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        .search-box {
-            margin-bottom: 25px;
-        }
-
-        .search-label {
-            color: white;
-            font-size: 0.85em;
-            font-weight: 600;
             margin-bottom: 8px;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 15px;
-            font-size: 1em;
-            background: rgba(255,255,255,0.95);
-            color: var(--text);
-            transition: all 0.3s;
-        }
-
-        .search-input:focus {
-            outline: none;
-            background: white;
-            border-color: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-
-        @media (min-width: 900px) {
-            .main-grid {
-                grid-template-columns: 350px 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .top-bar {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-
-            .header-title {
-                font-size: 1.8em;
-            }
-
-            .header-subtitle {
-                font-size: 0.9em;
-            }
-
-            .header-right {
-                flex-direction: row;
-                align-items: center;
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .header-author {
-                font-size: 0.8em;
-            }
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .card h2 {
-            color: var(--text);
-            margin-bottom: 20px;
-            font-size: 1.3em;
-        }
-
-        .tab-nav {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            background: var(--border);
-            padding: 5px;
-            border-radius: 10px;
-        }
-
-        .tab-btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            background: transparent;
-            color: var(--text-light);
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-
-        .tab-btn.active {
-            background: white;
-            color: var(--accent);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        body.dark-mode .tab-btn.active {
-            background: var(--bg-2);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .simple-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .input-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .input-group label {
-            color: var(--text-light);
-            font-size: 0.9em;
-            margin-bottom: 5px;
             font-weight: 500;
         }
 
@@ -2113,7 +269,7 @@
         .input-helper {
             font-size: 0.8em;
             color: var(--text-lighter);
-            margin-top: 4px;
+            margin-top: 6px;
         }
 
         .btn {
@@ -2238,6 +394,16 @@
             align-items: center;
         }
 
+        .cuota-pago-info {
+            font-size: 0.8em;
+            color: var(--text-lighter);
+            font-weight: 400;
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
         .cuota-monto {
             font-size: 1.2em;
             font-weight: bold;
@@ -2280,6 +446,11 @@
         .badge-ultima {
             background: #51cf66;
             color: white;
+        }
+
+        .badge-debito {
+            background: #74c0fc;
+            color: #1864ab;
         }
 
         .cuota-card.mes-actual {
@@ -2397,7 +568,7 @@
 
         .summary-item {
             background: var(--card-bg);
-            padding: 20px;
+            padding: 24px;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -2406,7 +577,7 @@
         .summary-item h3 {
             color: var(--text-light);
             font-size: 0.85em;
-            margin-bottom: 10px;
+            margin-bottom: 14px;
             text-transform: uppercase;
         }
 
@@ -2414,12 +585,13 @@
             color: var(--accent);
             font-size: 2em;
             font-weight: bold;
+            margin-bottom: 8px;
         }
 
         .summary-item .subtitle {
             color: var(--text-lighter);
             font-size: 0.8em;
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         .chart-card {
@@ -2552,7 +724,257 @@
         .meses-anteriores[open] summary::before {
             transform: rotate(90deg);
         }
-    </style>
+
+        .chart-controls {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .chart-toggle-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--border);
+            background: transparent;
+            color: var(--text-light);
+            font-size: 0.85em;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .chart-toggle-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .chart-toggle-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .badge-nota {
+            background: rgba(158, 158, 158, 0.15);
+            color: var(--text-light);
+            font-weight: 500;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .vista-hoy {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 0px;
+        }
+
+        .vista-hoy h3 {
+            color: var(--text);
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .vista-hoy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .vista-hoy-item {
+            background: var(--border);
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .vista-hoy-item h4 {
+            color: var(--text-light);
+            font-size: 0.8em;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .vista-hoy-item .valor {
+            color: var(--accent);
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .vista-hoy-top {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .vista-hoy-top-item {
+            font-size: 0.85em;
+            color: var(--text);
+        }
+
+        .archivados-section {
+            margin-top: 20px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .archivados-section summary {
+            padding: 12px 18px;
+            background: var(--border);
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.9em;
+            cursor: pointer;
+            user-select: none;
+            list-style: none;
+        }
+
+        .archivados-section summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .archivados-section summary::before {
+            content: '▶ ';
+            display: inline-block;
+            margin-right: 5px;
+            transition: transform 0.3s;
+        }
+
+        .archivados-section[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .archivados-section[open] summary {
+            background: var(--text-light);
+            color: white;
+        }
+
+        .archivados-content {
+            padding: 10px;
+        }
+
+        /* MEJORA 1: Secciones de formulario */
+        .form-section {
+            margin-bottom: 14px;
+        }
+
+        .form-section-title {
+            font-weight: 700;
+            font-size: 12px;
+            opacity: 0.7;
+            margin: 8px 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text);
+        }
+
+        .form-section.optional {
+            background: rgba(0, 0, 0, 0.03);
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        body.dark-mode .form-section.optional {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* MEJORA 2: Menú more (⋯) en cards */
+        .more-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .more-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .more-btn:hover {
+            background: rgba(0, 0, 0, 0.08);
+            color: var(--text);
+        }
+
+        body.dark-mode .more-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .popover {
+            position: absolute;
+            right: 0;
+            top: 110%;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 10px;
+            padding: 6px;
+            min-width: 160px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 30;
+            display: none;
+        }
+
+        .popover.show {
+            display: block;
+        }
+
+        body.dark-mode .popover {
+            background: var(--bg-2);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .popover button {
+            width: 100%;
+            text-align: left;
+            padding: 10px 12px;
+            border-radius: 8px;
+            background: transparent;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .popover button:hover {
+            background: rgba(0, 0, 0, 0.06);
+        }
+
+        body.dark-mode .popover button:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+    
+/* === Spacing tune-up (match index_fixed rhythm) === */
+.simple-form{gap:15px !important;}
+.input-group{margin-bottom:14px !important;}
+.input-group:last-child{margin-bottom:0 !important;}
+.input-group label{margin-bottom:8px !important; line-height:1.3 !important;}
+.input-helper{margin-top:6px !important; line-height:1.4 !important;}
+/* Optional section should NOT compress the form */
+.form-section{margin-bottom:18px !important;}
+.form-section.optional{
+  background:transparent !important;
+  padding:0 !important;
+  border-radius:0 !important;
+}
+.form-section.optional .input-group{margin-bottom:14px !important;}
+.form-section-title{margin:8px 0 10px !important;}
+
+</style>
 </head>
 <body>
     <div class="container">
@@ -2589,62 +1011,102 @@
 
                 <div id="tabCuotas" class="tab-content active">
                     <form id="formCuotas" class="simple-form">
-                        <div class="input-group">
-                            <label>¿Qué compraste?</label>
-                            <input type="text" id="nombre" placeholder="Ej: Notebook" required>
+                        <div class="form-section main">
+                            <div class="input-group">
+                                <label>¿Qué compraste?</label>
+                                <input type="text" id="nombre" placeholder="Ej: Notebook" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Monto Total</label>
+                                <input type="number" id="monto" placeholder="50000" step="0.01" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Cantidad de Cuotas</label>
+                                <input type="number" id="cuotas" placeholder="12" min="1" required>
+                            </div>
+                            <div class="input-group">
+                                <label>¿Por qué cuota vas?</label>
+                                <input type="number" id="cuotaActualInput" placeholder="1" min="1" value="1" required>
+                                <span class="input-helper">Si vas por la cuota 6, este mes se registra como 6/12</span>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label>Categoría</label>
-                            <select id="categoria" required>
-                                <option value="tecnologia">💻 Tecnología</option>
-                                <option value="ropa">👕 Ropa</option>
-                                <option value="hogar">🏠 Hogar</option>
-                                <option value="salud">💊 Salud</option>
-                                <option value="entretenimiento">🎮 Entretenimiento</option>
-                                <option value="educacion">📚 Educación</option>
-                                <option value="transporte">🚗 Transporte</option>
-                                <option value="otro">📦 Otro</option>
-                            </select>
+                        
+                        <div class="form-section optional">
+                            <div class="form-section-title">Opcional</div>
+                            <div class="input-group">
+                                <label>Categoría</label>
+                                <select id="categoria" required>
+                                    <option value="tecnologia">💻 Tecnología</option>
+                                    <option value="ropa">👕 Ropa</option>
+                                    <option value="hogar">🏠 Hogar</option>
+                                    <option value="salud">💊 Salud</option>
+                                    <option value="entretenimiento">🎮 Entretenimiento</option>
+                                    <option value="educacion">📚 Educación</option>
+                                    <option value="transporte">🚗 Transporte</option>
+                                    <option value="otro">📦 Otro</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Banco / tarjeta (opcional)</label>
+                                <input type="text" id="pagoInfo" placeholder="Ej: Galicia ****8421">
+                                <span class="input-helper">Info para recordar dónde pagás esta cuota</span>
+                            </div>
+                            <div class="input-group">
+                                <label>Nota (opcional)</label>
+                                <input type="text" id="nota" placeholder="Ej: promo sin interés / incluye Netflix">
+                                <span class="input-helper">Cualquier aclaración que quieras recordar</span>
+                            </div>
+                            <div class="input-group">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="checkbox" id="debitoAuto" style="cursor: pointer;">
+                                    <span>🔁 Débito automático</span>
+                                </label>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label>Monto Total</label>
-                            <input type="number" id="monto" placeholder="50000" step="0.01" required>
-                        </div>
-                        <div class="input-group">
-                            <label>Cantidad de Cuotas</label>
-                            <input type="number" id="cuotas" placeholder="12" min="1" required>
-                        </div>
-                        <div class="input-group">
-                            <label>¿Por qué cuota vas?</label>
-                            <input type="number" id="cuotaActualInput" placeholder="1" min="1" value="1" required>
-                            <span class="input-helper">Si vas por la cuota 6, este mes se registra como 6/12</span>
-                        </div>
+                        
                         <button type="submit" class="btn btn-add">+ Agregar Cuota</button>
                     </form>
                 </div>
 
                 <div id="tabFijos" class="tab-content">
                     <form id="formFijos" class="simple-form">
-                        <div class="input-group">
-                            <label>Nombre del Gasto</label>
-                            <input type="text" id="nombreFijo" placeholder="Ej: Gimnasio" required>
+                        <div class="form-section main">
+                            <div class="input-group">
+                                <label>Nombre del Gasto</label>
+                                <input type="text" id="nombreFijo" placeholder="Ej: Gimnasio" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Monto Mensual</label>
+                                <input type="number" id="montoFijo" placeholder="5000" step="0.01" required>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label>Categoría</label>
-                            <select id="categoriaFijo" required>
-                                <option value="servicios">💡 Servicios</option>
-                                <option value="suscripciones">📺 Suscripciones</option>
-                                <option value="tecnologia">💻 Tecnología</option>
-                                <option value="salud">💊 Salud</option>
-                                <option value="educacion">📚 Educación</option>
-                                <option value="transporte">🚗 Transporte</option>
-                                <option value="otro">📦 Otro</option>
-                            </select>
+                        
+                        <div class="form-section optional">
+                            <div class="form-section-title">Opcional</div>
+                            <div class="input-group">
+                                <label>Categoría</label>
+                                <select id="categoriaFijo" required>
+                                    <option value="servicios">💡 Servicios</option>
+                                    <option value="suscripciones">📺 Suscripciones</option>
+                                    <option value="tecnologia">💻 Tecnología</option>
+                                    <option value="salud">💊 Salud</option>
+                                    <option value="educacion">📚 Educación</option>
+                                    <option value="transporte">🚗 Transporte</option>
+                                    <option value="otro">📦 Otro</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Medio de pago (opcional)</label>
+                                <select id="medioPagoFijo">
+                                    <option value="">Seleccionar…</option>
+                                    <option value="Tarjeta">Tarjeta</option>
+                                    <option value="Débito">Débito</option>
+                                    <option value="Mercado Pago">Mercado Pago</option>
+                                    <option value="Efectivo">Efectivo</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label>Monto Mensual</label>
-                            <input type="number" id="montoFijo" placeholder="5000" step="0.01" required>
-                        </div>
+                        
                         <button type="submit" class="btn btn-add">+ Agregar Gasto Fijo</button>
                     </form>
                 </div>
@@ -2656,7 +1118,12 @@
                 <button class="btn btn-danger" onclick="borrarTodo()">🗑️ Borrar Todo</button>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div class="vista-hoy" id="vistaHoy">
+                    <h3>📍 Vista Hoy</h3>
+                    <div class="vista-hoy-grid" id="vistaHoyContent"></div>
+                </div>
+                
                 <div class="card">
                     <h2>📋 Próximas cuotas</h2>
                     <div id="listaCuotas" class="cuotas-lista"></div>
@@ -2676,9 +1143,9 @@
                 <div class="subtitle">A pagar</div>
             </div>
             <div class="summary-item">
-                <h3>Próximo mes</h3>
+                <h3>Mes siguiente</h3>
                 <div class="number" id="totalProximo">$0</div>
-                <div class="subtitle">Proyección</div>
+                <div class="subtitle">Pagos que se activan el mes que viene</div>
             </div>
             <div class="summary-item">
                 <h3>Cuotas</h3>
@@ -2694,6 +1161,10 @@
 
         <div class="chart-card">
             <h2>📊 Próximos 6 meses</h2>
+            <div class="chart-controls">
+                <button class="chart-toggle-btn active" onclick="toggleChartMonths(6)">6 meses</button>
+                <button class="chart-toggle-btn" onclick="toggleChartMonths(12)">12 meses</button>
+            </div>
             <canvas id="myChart"></canvas>
         </div>
     </div>
@@ -2730,6 +1201,30 @@
                     <label id="editMontoLabel">Monto</label>
                     <input type="number" id="editMonto" step="0.01" required>
                 </div>
+                <div class="input-group" id="editPagoInfoGroup" style="display: none;">
+                    <label>Banco / tarjeta (opcional)</label>
+                    <input type="text" id="editPagoInfo" placeholder="Ej: Galicia ****8421">
+                </div>
+                <div class="input-group" id="editNotaGroup" style="display: none;">
+                    <label>Nota (opcional)</label>
+                    <input type="text" id="editNota" placeholder="Ej: promo sin interés / incluye Netflix">
+                </div>
+                <div class="input-group" id="editMedioPagoGroup" style="display: none;">
+                    <label>Medio de pago (opcional)</label>
+                    <select id="editMedioPago">
+                        <option value="">Seleccionar…</option>
+                        <option value="Tarjeta">Tarjeta</option>
+                        <option value="Débito">Débito</option>
+                        <option value="Mercado Pago">Mercado Pago</option>
+                        <option value="Efectivo">Efectivo</option>
+                    </select>
+                </div>
+                <div class="input-group" id="editDebitoAutoGroup" style="display: none;">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="editDebitoAuto" style="cursor: pointer;">
+                        <span>🔁 Débito automático</span>
+                    </label>
+                </div>
                 <div class="modal-actions">
                     <button type="submit" class="btn btn-add">💾 Guardar</button>
                     <button type="button" class="btn btn-secondary" onclick="cerrarModal()">❌ Cancelar</button>
@@ -2758,6 +1253,7 @@
         let cuotas = [];
         let fijos = [];
         let myChart = null;
+        let chartMonths = 6;
 
         function guardar() {
             localStorage.setItem('cuotas', JSON.stringify(cuotas));
@@ -2779,6 +1275,10 @@
                         if (item.categoria && CATS[item.categoria]?.migrateTo) {
                             item.categoria = CATS[item.categoria].migrateTo;
                         }
+                        
+                        // Compatibilidad con campos opcionales
+                        if (!item.nota) item.nota = '';
+                        if (item.archivado === undefined) item.archivado = false;
                         
                         // Validar datos básicos
                         if (!item.nombre || !item.categoria || !CATS[item.categoria]) return false;
@@ -2804,6 +1304,9 @@
                         if (item.categoria && CATS[item.categoria]?.migrateTo) {
                             item.categoria = CATS[item.categoria].migrateTo;
                         }
+                        
+                        // Compatibilidad con campos opcionales
+                        if (item.archivado === undefined) item.archivado = false;
                         
                         // Validar datos básicos
                         if (!item.nombre || !item.categoria || !CATS[item.categoria]) return false;
@@ -2854,6 +1357,15 @@
             }
         }
 
+        function toggleChartMonths(months) {
+            chartMonths = months;
+            document.querySelectorAll('.chart-toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            updateChart();
+        }
+
         function formatMoney(n) {
             if (isNaN(n)) n = 0;
             return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -2867,33 +1379,56 @@
             return `${meses[mes < 0 ? mes + 12 : mes]} ${año}`;
         }
 
-        function calcular() {
-            let totalMes = 0;
-            let totalProximo = 0;
+        // B) Helper para determinar si una cuota paga en un offset determinado
+        function cuotaPagaEnOffset(c, offset) {
+            const pagoNum = (offset - c.inicio) + 1;
+            return pagoNum >= c.actual && pagoNum <= c.total;
+        }
+
+        // B) Calcular total de un mes específico (offset)
+        function totalOffset(offset) {
+            let total = 0;
             
+            // Sumar cuotas que pagan en este offset
             cuotas.forEach(c => {
-                // Este mes (offset 0)
-                const pagoNumeroEnMesActual = (0 - c.inicio) + 1;
-                if (pagoNumeroEnMesActual >= 1 && pagoNumeroEnMesActual <= c.total && pagoNumeroEnMesActual >= c.actual) {
-                    totalMes += c.monto;
-                }
-                
-                // Próximo mes (offset 1)
-                const pagoNumeroEnProximoMes = (1 - c.inicio) + 1;
-                if (pagoNumeroEnProximoMes >= 1 && pagoNumeroEnProximoMes <= c.total && pagoNumeroEnProximoMes >= c.actual) {
-                    totalProximo += c.monto;
+                if (c.archivado) return;
+                if (cuotaPagaEnOffset(c, offset)) {
+                    total += c.monto;
                 }
             });
             
+            // Sumar fijos (siempre cuentan)
             fijos.forEach(f => {
-                totalMes += f.monto;
-                totalProximo += f.monto;
+                if (f.archivado) return;
+                total += f.monto;
             });
+            
+            return total;
+        }
+
+        function calcular() {
+            // B) Usar la función unificada totalOffset
+            const totalMes = totalOffset(0);
+            const totalProximo = totalOffset(1);
+            
+            const cuotasActivas = cuotas.filter(c => !c.archivado).length;
+            const fijosActivos = fijos.filter(f => !f.archivado).length;
             
             document.getElementById('totalMes').textContent = formatMoney(totalMes);
-            document.getElementById('totalProximo').textContent = formatMoney(totalProximo);
-            document.getElementById('cantCuotas').textContent = cuotas.length;
-            document.getElementById('cantFijos').textContent = fijos.length;
+            
+            // C) Si próximo mes es 0, mostrar mensaje más friendly
+            if (totalProximo === 0) {
+                document.getElementById('totalProximo').textContent = 'Sin pagos estimados';
+                document.getElementById('totalProximo').style.fontSize = '0.9em';
+                document.getElementById('totalProximo').style.opacity = '0.7';
+            } else {
+                document.getElementById('totalProximo').textContent = formatMoney(totalProximo);
+                document.getElementById('totalProximo').style.fontSize = '';
+                document.getElementById('totalProximo').style.opacity = '';
+            }
+            
+            document.getElementById('cantCuotas').textContent = cuotasActivas;
+            document.getElementById('cantFijos').textContent = fijosActivos;
         }
 
         function updateChart() {
@@ -2901,20 +1436,24 @@
             const dataCuotas = [];
             const dataFijos = [];
             
-            for (let i = 0; i < 6; i++) {
+            // MEJORA 3: Usar chartMonths en lugar de hardcodear 6
+            for (let i = 0; i < chartMonths; i++) {
                 labels.push(getMes(i));
                 let totalCuotas = 0;
                 let totalFijos = 0;
                 
+                // B) Usar la misma lógica que calcular()
                 cuotas.forEach(c => {
-                    const cuotaEnEsteMes = c.actual + i;
-                    if (cuotaEnEsteMes <= c.total) {
-                        const offset = c.inicio + (cuotaEnEsteMes - 1);
-                        if (offset === i) totalCuotas += c.monto;
+                    if (c.archivado) return;
+                    if (cuotaPagaEnOffset(c, i)) {
+                        totalCuotas += c.monto;
                     }
                 });
                 
-                fijos.forEach(f => totalFijos += f.monto);
+                fijos.forEach(f => {
+                    if (f.archivado) return;
+                    totalFijos += f.monto;
+                });
                 
                 dataCuotas.push(totalCuotas);
                 dataFijos.push(totalFijos);
@@ -3006,6 +1545,7 @@
         function mostrar() {
             mostrarCuotas();
             mostrarFijos();
+            actualizarVistaHoy();
         }
 
         function mostrarCuotas() {
@@ -3032,6 +1572,9 @@
             let cuotasVisibles = 0;
             
             cuotas.forEach((c, idx) => {
+                // Filtrar archivados
+                if (c.archivado) return;
+                
                 // Filtro de búsqueda: nombre o categoría
                 if (buscar) {
                     const nombreMatch = c.nombre.toLowerCase().includes(buscar);
@@ -3078,6 +1621,10 @@
             // Meses actuales y futuros
             offsetsActualesYFuturos.forEach(offset => {
                 const data = porOffset[offset];
+                
+                // MEJORA 1: Ordenar por monto DESC
+                data.cuotas.sort((a, b) => b.monto - a.monto);
+                
                 const total = data.cuotas.reduce((s, c) => s + c.monto, 0);
                 
                 html += `
@@ -3099,10 +1646,15 @@
                     html += `
                         <div class="cuota-card${claseMesActual}">
                             <div class="cuota-top">
-                                <div class="cuota-nombre">
-                                    ${c.nombre}
-                                    <span class="badge badge-cat">${cat.icono} ${cat.nombre}</span>
-                                    ${esUltima ? '<span class="badge badge-ultima">🏁 Última</span>' : ''}
+                                <div style="flex: 1;">
+                                    <div class="cuota-nombre">
+                                        ${c.nombre}
+                                        <span class="badge badge-cat">${cat.icono} ${cat.nombre}</span>
+                                        ${esUltima ? '<span class="badge badge-ultima">🏁 Última</span>' : ''}
+                                        ${c.debitoAuto ? '<span class="badge badge-debito">🔁 Débito auto</span>' : ''}
+                                    </div>
+                                    ${c.pagoInfo ? `<div class="cuota-pago-info">💳 ${c.pagoInfo}</div>` : ''}
+                                    ${c.nota ? `<div class="cuota-pago-info">📝 ${c.nota}</div>` : ''}
                                 </div>
                                 <div class="cuota-monto">
                                     <span>${formatMoney(c.monto)}</span>
@@ -3116,7 +1668,14 @@
                                 <span class="cuota-detalle">Cuota ${c.actual}/${c.total} • ${restantes} pago${restantes !== 1 ? 's' : ''} restante${restantes !== 1 ? 's' : ''}</span>
                                 <div class="cuota-actions">
                                     ${offset === 0 ? `<button class="action-btn success" onclick="avanzarCuota(${c.idx})" title="Marcar como pagada">✅</button>` : ''}
-                                    <button class="action-btn" onclick="editarItem('cuota', ${c.idx})" title="Editar">✏️</button>
+                                    <div class="more-menu">
+                                        <button class="more-btn" onclick="togglePopover(event, 'cuota-${c.idx}')" title="Más opciones">⋯</button>
+                                        <div class="popover" id="popover-cuota-${c.idx}">
+                                            <button onclick="duplicarItem('cuota', ${c.idx}); closeAllPopovers()">📋 Copiar</button>
+                                            <button onclick="editarItem('cuota', ${c.idx}); closeAllPopovers()">✏️ Editar</button>
+                                            <button onclick="archivarItem('cuota', ${c.idx}); closeAllPopovers()">🗂️ Archivar</button>
+                                        </div>
+                                    </div>
                                     <button class="action-btn danger" onclick="borrarCuota(${c.idx})" title="Eliminar">✕</button>
                                 </div>
                             </div>
@@ -3143,6 +1702,10 @@
                 
                 offsetsAnteriores.forEach(offset => {
                     const data = porOffset[offset];
+                    
+                    // MEJORA 1: Ordenar por monto DESC
+                    data.cuotas.sort((a, b) => b.monto - a.monto);
+                    
                     const total = data.cuotas.reduce((s, c) => s + c.monto, 0);
                     
                     html += `
@@ -3163,11 +1726,16 @@
                         html += `
                             <div class="cuota-card">
                                 <div class="cuota-top">
-                                    <div class="cuota-nombre">
-                                        ${c.nombre}
-                                        <span class="badge badge-atrasada">⚠️ Atrasada</span>
-                                        <span class="badge badge-cat">${cat.icono} ${cat.nombre}</span>
-                                        ${esUltima ? '<span class="badge badge-ultima">🏁 Última</span>' : ''}
+                                    <div style="flex: 1;">
+                                        <div class="cuota-nombre">
+                                            ${c.nombre}
+                                            <span class="badge badge-atrasada">⚠️ Atrasada</span>
+                                            <span class="badge badge-cat">${cat.icono} ${cat.nombre}</span>
+                                            ${esUltima ? '<span class="badge badge-ultima">🏁 Última</span>' : ''}
+                                            ${c.debitoAuto ? '<span class="badge badge-debito">🔁 Débito auto</span>' : ''}
+                                        </div>
+                                        ${c.pagoInfo ? `<div class="cuota-pago-info">💳 ${c.pagoInfo}</div>` : ''}
+                                        ${c.nota ? `<div class="cuota-pago-info">📝 ${c.nota}</div>` : ''}
                                     </div>
                                     <div class="cuota-monto">
                                         <span>${formatMoney(c.monto)}</span>
@@ -3180,7 +1748,14 @@
                                 <div class="cuota-info">
                                     <span class="cuota-detalle">Cuota ${c.actual}/${c.total} • ${restantes} pago${restantes !== 1 ? 's' : ''} restante${restantes !== 1 ? 's' : ''}</span>
                                     <div class="cuota-actions">
-                                        <button class="action-btn" onclick="editarItem('cuota', ${c.idx})" title="Editar">✏️</button>
+                                        <div class="more-menu">
+                                            <button class="more-btn" onclick="togglePopover(event, 'cuota-ant-${c.idx}')" title="Más opciones">⋯</button>
+                                            <div class="popover" id="popover-cuota-ant-${c.idx}">
+                                                <button onclick="duplicarItem('cuota', ${c.idx}); closeAllPopovers()">📋 Copiar</button>
+                                                <button onclick="editarItem('cuota', ${c.idx}); closeAllPopovers()">✏️ Editar</button>
+                                                <button onclick="archivarItem('cuota', ${c.idx}); closeAllPopovers()">🗂️ Archivar</button>
+                                            </div>
+                                        </div>
                                         <button class="action-btn danger" onclick="borrarCuota(${c.idx})" title="Eliminar">✕</button>
                                     </div>
                                 </div>
@@ -3195,6 +1770,48 @@
             }
 
             lista.innerHTML = html;
+            
+            // Agregar archivados
+            const cuotasArchivadas = cuotas.filter(c => c.archivado);
+            if (cuotasArchivadas.length > 0) {
+                let htmlArchivados = `
+                    <details class="archivados-section">
+                        <summary>🗂️ Archivados (${cuotasArchivadas.length})</summary>
+                        <div class="archivados-content">
+                `;
+                
+                cuotasArchivadas.forEach((c, realIdx) => {
+                    const idx = cuotas.indexOf(c);
+                    const cat = CATS[c.categoria] || CATS.otro;
+                    const montoTotal = c.monto * c.total;
+                    htmlArchivados += `
+                        <div class="cuota-card" style="opacity: 0.7; margin-bottom: 10px;">
+                            <div class="cuota-top">
+                                <div style="flex: 1;">
+                                    <div class="cuota-nombre">
+                                        ${c.nombre}
+                                        <span class="badge badge-cat">${cat.icono} ${cat.nombre}</span>
+                                    </div>
+                                </div>
+                                <div class="cuota-monto">
+                                    <span>${formatMoney(c.monto)}</span>
+                                    <span class="cuota-monto-total">Total: ${formatMoney(montoTotal)}</span>
+                                </div>
+                            </div>
+                            <div class="cuota-info">
+                                <span class="cuota-detalle">Cuota ${c.actual}/${c.total}</span>
+                                <div class="cuota-actions">
+                                    <button class="action-btn success" onclick="restaurarItem('cuota', ${idx})" title="Restaurar">↩️</button>
+                                    <button class="action-btn danger" onclick="borrarCuota(${idx})" title="Eliminar definitivo">✕</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                htmlArchivados += '</div></details>';
+                lista.innerHTML += htmlArchivados;
+            }
         }
 
         function mostrarFijos() {
@@ -3219,6 +1836,9 @@
             
             // Filtrar fijos por búsqueda
             const fijosFiltrados = fijos.map((f, idx) => ({ ...f, idx })).filter(f => {
+                // Filtrar archivados
+                if (f.archivado) return false;
+                
                 if (!buscar) return true;
                 const nombreMatch = f.nombre.toLowerCase().includes(buscar);
                 const catNombre = getCategoriaNombre(f.categoria).toLowerCase();
@@ -3247,6 +1867,9 @@
                 return;
             }
 
+            // MEJORA 1: Ordenar por monto DESC
+            fijosFiltrados.sort((a, b) => b.monto - a.monto);
+
             const total = fijosFiltrados.reduce((s, f) => s + f.monto, 0);
             
             let html = `
@@ -3262,17 +1885,27 @@
                 html += `
                     <div class="cuota-card">
                         <div class="cuota-top">
-                            <div class="cuota-nombre">
-                                ${f.nombre}
-                                <span class="badge badge-fijo">FIJO</span>
-                                <span class="badge badge-cat">${cat.icono} ${cat.nombre}</span>
+                            <div style="flex: 1;">
+                                <div class="cuota-nombre">
+                                    ${f.nombre}
+                                    <span class="badge badge-fijo">FIJO</span>
+                                    <span class="badge badge-cat">${cat.icono} ${cat.nombre}</span>
+                                </div>
+                                ${f.medioPago ? `<div class="cuota-pago-info">Medio: ${f.medioPago}</div>` : ''}
                             </div>
                             <div class="cuota-monto">${formatMoney(f.monto)}</div>
                         </div>
                         <div class="cuota-info">
                             <span class="cuota-detalle">Gasto mensual</span>
                             <div class="cuota-actions">
-                                <button class="action-btn" onclick="editarItem('fijo', ${f.idx})" title="Editar">✏️</button>
+                                <div class="more-menu">
+                                    <button class="more-btn" onclick="togglePopover(event, 'fijo-${f.idx}')" title="Más opciones">⋯</button>
+                                    <div class="popover" id="popover-fijo-${f.idx}">
+                                        <button onclick="duplicarItem('fijo', ${f.idx}); closeAllPopovers()">📋 Copiar</button>
+                                        <button onclick="editarItem('fijo', ${f.idx}); closeAllPopovers()">✏️ Editar</button>
+                                        <button onclick="archivarItem('fijo', ${f.idx}); closeAllPopovers()">🗂️ Archivar</button>
+                                    </div>
+                                </div>
                                 <button class="action-btn danger" onclick="borrarFijo(${f.idx})" title="Eliminar">✕</button>
                             </div>
                         </div>
@@ -3282,6 +1915,45 @@
             
             html += '</div>';
             lista.innerHTML = html;
+            
+            // Agregar archivados
+            const fijosArchivados = fijos.filter(f => f.archivado);
+            if (fijosArchivados.length > 0) {
+                let htmlArchivados = `
+                    <details class="archivados-section">
+                        <summary>🗂️ Archivados (${fijosArchivados.length})</summary>
+                        <div class="archivados-content">
+                `;
+                
+                fijosArchivados.forEach(f => {
+                    const idx = fijos.indexOf(f);
+                    const cat = CATS[f.categoria] || CATS.otro;
+                    htmlArchivados += `
+                        <div class="cuota-card" style="opacity: 0.7; margin-bottom: 10px;">
+                            <div class="cuota-top">
+                                <div style="flex: 1;">
+                                    <div class="cuota-nombre">
+                                        ${f.nombre}
+                                        <span class="badge badge-cat">${cat.icono} ${cat.nombre}</span>
+                                    </div>
+                                </div>
+                                <div class="cuota-monto">${formatMoney(f.monto)}</div>
+                            </div>
+                            <div class="cuota-info">
+                                <span class="cuota-detalle">Gasto mensual</span>
+                                <div class="cuota-actions">
+                                    <button class="action-btn success" onclick="restaurarItem('fijo', ${idx})" title="Restaurar">↩️</button>
+                                    <button class="action-btn danger" onclick="borrarFijo(${idx})" title="Eliminar definitivo">✕</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                htmlArchivados += '</div></details>';
+                lista.innerHTML += htmlArchivados;
+            }
+            
             calcular();
         }
 
@@ -3307,22 +1979,131 @@
             }
         }
 
+        function archivarItem(tipo, idx) {
+            if (tipo === 'cuota') {
+                const item = cuotas[idx];
+                item.archivado = true;
+                toast(`🗂️ ${item.nombre} archivado`);
+            } else {
+                const item = fijos[idx];
+                item.archivado = true;
+                toast(`🗂️ ${item.nombre} archivado`);
+            }
+            guardar();
+            mostrar();
+            updateChart();
+        }
+
+        function restaurarItem(tipo, idx) {
+            if (tipo === 'cuota') {
+                const item = cuotas[idx];
+                item.archivado = false;
+                toast(`↩️ ${item.nombre} restaurado`);
+            } else {
+                const item = fijos[idx];
+                item.archivado = false;
+                toast(`↩️ ${item.nombre} restaurado`);
+            }
+            guardar();
+            mostrar();
+            updateChart();
+        }
+
+        function duplicarItem(tipo, idx) {
+            if (tipo === 'cuota') {
+                cambiarTab('cuotas');
+                const item = cuotas[idx];
+                document.getElementById('nombre').value = item.nombre;
+                document.getElementById('categoria').value = item.categoria;
+                document.getElementById('monto').value = (item.monto * item.total).toFixed(2);
+                document.getElementById('cuotas').value = item.total;
+                document.getElementById('cuotaActualInput').value = 1;
+                document.getElementById('pagoInfo').value = item.pagoInfo || '';
+                document.getElementById('nota').value = item.nota || '';
+                document.getElementById('debitoAuto').checked = item.debitoAuto || false;
+                document.getElementById('nombre').focus();
+                toast('📋 Formulario prellenado - modificá y guardá');
+            } else {
+                cambiarTab('fijos');
+                const item = fijos[idx];
+                document.getElementById('nombreFijo').value = item.nombre;
+                document.getElementById('categoriaFijo').value = item.categoria;
+                document.getElementById('montoFijo').value = item.monto.toFixed(2);
+                document.getElementById('medioPagoFijo').value = item.medioPago || '';
+                document.getElementById('nombreFijo').focus();
+                toast('📋 Formulario prellenado - modificá y guardá');
+            }
+        }
+
+        function actualizarVistaHoy() {
+            // Calcular totales actuales
+            const ahora = new Date();
+            let totalMes = 0;
+            let totalProximo = 0;
+            const itemsMes = [];
+
+            // Cuotas del mes actual
+            cuotas.forEach(c => {
+                if (c.archivado) return;
+                const offset = c.inicio + (c.actual - 1);
+                if (offset === 0) {
+                    totalMes += c.monto;
+                    itemsMes.push({ nombre: c.nombre, monto: c.monto });
+                } else if (offset === 1) {
+                    totalProximo += c.monto;
+                }
+            });
+
+            // Fijos
+            fijos.forEach(f => {
+                if (f.archivado) return;
+                totalMes += f.monto;
+                totalProximo += f.monto;
+                itemsMes.push({ nombre: f.nombre, monto: f.monto });
+            });
+
+            // Top 3 por monto
+            itemsMes.sort((a, b) => b.monto - a.monto);
+            const top3 = itemsMes.slice(0, 3);
+
+            const html = `
+                <div class="vista-hoy-item">
+                    <h4>Este mes</h4>
+                    <div class="valor">${formatMoney(totalMes)}</div>
+                </div>
+                <div class="vista-hoy-item">
+                    <h4>Mes siguiente</h4>
+                    <div class="valor">${formatMoney(totalProximo)}</div>
+                </div>
+                <div class="vista-hoy-item">
+                    <h4>Top 3 gastos</h4>
+                    <div class="vista-hoy-top">
+                        ${top3.map(item => `<div class="vista-hoy-top-item">${item.nombre}: ${formatMoney(item.monto)}</div>`).join('')}
+                        ${top3.length === 0 ? '<div class="vista-hoy-top-item" style="color: var(--text-lighter);">Sin gastos</div>' : ''}
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('vistaHoyContent').innerHTML = html;
+        }
+
         function copiarLista() {
             if (cuotas.length === 0 && fijos.length === 0) {
                 toast('No hay nada para copiar');
                 return;
             }
 
-            let texto = '📋 AL DÍA\n\n';
+            let texto = '*💳 AL DÍA*\n\n';
             let totalMesActual = 0;
 
-            // Sección 1: PRÓXIMAS CUOTAS (agrupadas por mes)
-            if (cuotas.length > 0) {
-                texto += '📋 PRÓXIMAS CUOTAS\n';
-                texto += '═════════════════\n\n';
-                
+            // Filtrar archivados
+            const cuotasActivas = cuotas.filter(c => !c.archivado);
+            const fijosActivos = fijos.filter(f => !f.archivado);
+
+            // Cuotas por mes
+            if (cuotasActivas.length > 0) {
                 const porOffset = {};
-                cuotas.forEach(c => {
+                cuotasActivas.forEach(c => {
                     const offset = c.inicio + (c.actual - 1);
                     if (!porOffset[offset]) {
                         porOffset[offset] = { cuotas: [], mes: getMes(offset) };
@@ -3334,40 +2115,46 @@
 
                 offsetsOrdenados.forEach(offset => {
                     const data = porOffset[offset];
-                    const totalCuotasMes = data.cuotas.reduce((s, c) => s + c.monto, 0);
+                    const totalMes = data.cuotas.reduce((s, c) => s + c.monto, 0);
 
-                    texto += `${data.mes.toUpperCase()}\n`;
-                    texto += `─────────────────\n`;
-
+                    texto += `📅 *${data.mes.toUpperCase()}*\n\n`;
+                    
                     data.cuotas.forEach(c => {
                         const cat = CATS[c.categoria] || CATS.otro;
-                        texto += `${c.actual}/${c.total} ${cat.icono} ${c.nombre} - ${formatMoney(c.monto)}\n`;
+                        // MEJORA 5: Formato más leíble
+                        texto += `*${c.nombre}*\n`;
+                        texto += `${formatMoney(c.monto)} · ${c.actual}/${c.total}\n`;
+                        if (c.pagoInfo) texto += `💳 ${c.pagoInfo}\n`;
+                        if (c.nota) texto += `📝 ${c.nota}\n`;
+                        texto += `\n`;
                     });
                     
-                    texto += `\n`;
+                    texto += `──────────────\n`;
+                    texto += `*Total: ${formatMoney(totalMes)}*\n\n`;
                     
-                    if (offset === 0) totalMesActual += totalCuotasMes;
+                    if (offset === 0) totalMesActual += totalMes;
                 });
             }
 
-            // Sección 2: GASTOS FIJOS (lista simple)
-            if (fijos.length > 0) {
-                texto += '📌 GASTOS FIJOS (MENSUALES)\n';
-                texto += '═════════════════\n\n';
+            // Fijos
+            if (fijosActivos.length > 0) {
+                const totalFijos = fijosActivos.reduce((s, f) => s + f.monto, 0);
                 
-                const totalFijos = fijos.reduce((s, f) => s + f.monto, 0);
-                
-                fijos.forEach(f => {
+                texto += `📌 *GASTOS FIJOS MENSUALES*\n\n`;
+                fijosActivos.forEach(f => {
                     const cat = CATS[f.categoria] || CATS.otro;
-                    texto += `🔄 ${cat.icono} ${f.nombre} - ${formatMoney(f.monto)}\n`;
+                    // MEJORA 5: Formato más leíble para fijos
+                    texto += `*${f.nombre}* - ${formatMoney(f.monto)}`;
+                    if (f.medioPago) texto += ` (Medio: ${f.medioPago})`;
+                    texto += `\n`;
                 });
-                
-                texto += `\n`;
+                texto += `\n──────────────\n`;
+                texto += `*Total: ${formatMoney(totalFijos)}*\n\n`;
                 totalMesActual += totalFijos;
             }
 
-            texto += `═════════════════\n`;
-            texto += `TOTAL A PAGAR ESTE MES: ${formatMoney(totalMesActual)}`;
+            texto += `━━━━━━━━━━━━━━━\n`;
+            texto += `*TOTAL ESTE MES: ${formatMoney(totalMesActual)}*`;
 
             navigator.clipboard.writeText(texto).then(() => {
                 toast('✓ Lista copiada al portapapeles');
@@ -3400,6 +2187,9 @@
             const monto = parseFloat(document.getElementById('monto').value);
             const total = parseInt(document.getElementById('cuotas').value);
             const cuotaActual = parseInt(document.getElementById('cuotaActualInput').value);
+            const pagoInfo = document.getElementById('pagoInfo').value.trim();
+            const nota = document.getElementById('nota').value.trim();
+            const debitoAuto = document.getElementById('debitoAuto').checked;
             
             if (!nombre) {
                 toast('⚠️ Ingresá un nombre');
@@ -3435,6 +2225,9 @@
                 total,
                 monto: monto / total,
                 inicio: inicio,
+                pagoInfo: pagoInfo || '',
+                nota: nota || '',
+                debitoAuto: debitoAuto || false,
                 fecha: new Date().toISOString()
             });
             
@@ -3452,6 +2245,7 @@
             const nombre = document.getElementById('nombreFijo').value.trim();
             const categoria = document.getElementById('categoriaFijo').value;
             const monto = parseFloat(document.getElementById('montoFijo').value);
+            const medioPago = document.getElementById('medioPagoFijo').value;
             
             if (!nombre) {
                 toast('⚠️ Ingresá un nombre');
@@ -3467,6 +2261,7 @@
                 nombre,
                 categoria,
                 monto,
+                medioPago: medioPago || '',
                 fecha: new Date().toISOString()
             });
             
@@ -3516,9 +2311,25 @@
             if (tipo === 'cuota') {
                 document.getElementById('editMontoLabel').textContent = 'Monto Total';
                 document.getElementById('editMonto').value = (item.monto * item.total).toFixed(2);
+                document.getElementById('editPagoInfoGroup').style.display = 'flex';
+                document.getElementById('editPagoInfo').value = item.pagoInfo || '';
+                document.getElementById('editNotaGroup').style.display = 'flex';
+                document.getElementById('editNota').value = item.nota || '';
+                document.getElementById('editMedioPagoGroup').style.display = 'none';
+                document.getElementById('editMedioPago').value = '';
+                document.getElementById('editDebitoAutoGroup').style.display = 'flex';
+                document.getElementById('editDebitoAuto').checked = item.debitoAuto || false;
             } else {
                 document.getElementById('editMontoLabel').textContent = 'Monto Mensual';
                 document.getElementById('editMonto').value = item.monto.toFixed(2);
+                document.getElementById('editPagoInfoGroup').style.display = 'none';
+                document.getElementById('editPagoInfo').value = '';
+                document.getElementById('editNotaGroup').style.display = 'none';
+                document.getElementById('editNota').value = '';
+                document.getElementById('editMedioPagoGroup').style.display = 'flex';
+                document.getElementById('editMedioPago').value = item.medioPago || '';
+                document.getElementById('editDebitoAutoGroup').style.display = 'none';
+                document.getElementById('editDebitoAuto').checked = false;
             }
             
             document.getElementById('editModal').classList.add('show');
@@ -3551,15 +2362,23 @@
             if (editandoTipo === 'cuota') {
                 const item = cuotas[editandoIdx];
                 if (!item) return;
+                const pagoInfo = document.getElementById('editPagoInfo').value.trim();
+                const nota = document.getElementById('editNota').value.trim();
+                const debitoAuto = document.getElementById('editDebitoAuto').checked;
                 item.nombre = nombre;
                 item.categoria = categoria;
                 item.monto = monto / item.total;
+                item.pagoInfo = pagoInfo || '';
+                item.nota = nota || '';
+                item.debitoAuto = debitoAuto || false;
             } else {
                 const item = fijos[editandoIdx];
                 if (!item) return;
+                const medioPago = document.getElementById('editMedioPago').value;
                 item.nombre = nombre;
                 item.categoria = categoria;
                 item.monto = monto;
+                item.medioPago = medioPago || '';
             }
             
             guardar();
@@ -3612,6 +2431,7 @@
                     }
                     
                     // Validar y limpiar cuotas
+                    let cuotasAjustadas = 0;
                     const cuotasValidas = datos.cuotas.filter(c => {
                         if (!c || typeof c !== 'object') return false;
                         if (!c.nombre || typeof c.nombre !== 'string') return false;
@@ -3619,32 +2439,56 @@
                         if (isNaN(c.monto) || c.monto <= 0) return false;
                         if (isNaN(c.actual) || isNaN(c.total) || c.actual > c.total) return false;
                         
+                        let ajustado = false;
+                        
                         // Migrar categorías antiguas
                         if (CATS[c.categoria]?.migrateTo) {
                             c.categoria = CATS[c.categoria].migrateTo;
+                            ajustado = true;
                         }
                         
                         // Validar categoría existe
-                        if (!CATS[c.categoria]) c.categoria = 'otro';
+                        if (!CATS[c.categoria]) {
+                            c.categoria = 'otro';
+                            ajustado = true;
+                        }
                         
+                        // MEJORA 2: Asegurar campo nota existe
+                        if (!c.nota) c.nota = '';
+                        
+                        // Compatibilidad con archivado
+                        if (c.archivado === undefined) c.archivado = false;
+                        
+                        if (ajustado) cuotasAjustadas++;
                         return true;
                     });
                     
                     // Validar y limpiar fijos
+                    let fijosAjustados = 0;
                     const fijosValidos = datos.fijos.filter(f => {
                         if (!f || typeof f !== 'object') return false;
                         if (!f.nombre || typeof f.nombre !== 'string') return false;
                         if (!f.categoria || typeof f.categoria !== 'string') return false;
                         if (isNaN(f.monto) || f.monto <= 0) return false;
                         
+                        let ajustado = false;
+                        
                         // Migrar categorías antiguas
                         if (CATS[f.categoria]?.migrateTo) {
                             f.categoria = CATS[f.categoria].migrateTo;
+                            ajustado = true;
                         }
                         
                         // Validar categoría existe
-                        if (!CATS[f.categoria]) f.categoria = 'otro';
+                        if (!CATS[f.categoria]) {
+                            f.categoria = 'otro';
+                            ajustado = true;
+                        }
                         
+                        // Compatibilidad con archivado
+                        if (f.archivado === undefined) f.archivado = false;
+                        
+                        if (ajustado) fijosAjustados++;
                         return true;
                     });
                     
@@ -3666,8 +2510,22 @@
                     mostrar();
                     updateChart();
                     
-                    const itemsImportados = cuotasValidas.length + fijosValidos.length;
-                    toast(`✓ ${itemsImportados} item${itemsImportados !== 1 ? 's' : ''} importado${itemsImportados !== 1 ? 's' : ''}`);
+                    // MEJORA 4: Mensaje de import detallado
+                    const totalImportados = cuotasValidas.length + fijosValidos.length;
+                    const totalAjustados = cuotasAjustadas + fijosAjustados;
+                    const totalOriginales = datos.cuotas.length + datos.fijos.length;
+                    const itemsInvalidos = totalOriginales - totalImportados;
+                    
+                    let mensaje = `✓ Importado: ${cuotasValidas.length} cuota${cuotasValidas.length !== 1 ? 's' : ''} · ${fijosValidos.length} gasto${fijosValidos.length !== 1 ? 's' : ''} fijo${fijosValidos.length !== 1 ? 's' : ''}`;
+                    
+                    if (totalAjustados > 0 || itemsInvalidos > 0) {
+                        const detalles = [];
+                        if (totalAjustados > 0) detalles.push(`${totalAjustados} ajustado${totalAjustados !== 1 ? 's' : ''}`);
+                        if (itemsInvalidos > 0) detalles.push(`${itemsInvalidos} inválido${itemsInvalidos !== 1 ? 's omitidos' : ' omitido'}`);
+                        mensaje += ` | ${detalles.join(' · ')}`;
+                    }
+                    
+                    toast(mensaje);
                     
                 } catch (error) {
                     console.error('Error al importar:', error);
@@ -3677,6 +2535,63 @@
             reader.readAsText(file);
             event.target.value = '';
         }
+
+        // Atajos de teclado
+        document.addEventListener('keydown', e => {
+            // "/" para enfocar búsqueda (si no estás en un input)
+            if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'SELECT' && document.activeElement.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                document.getElementById('searchBox').focus();
+            }
+            
+            // ESC para cerrar modal
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('editModal');
+                if (modal.classList.contains('show')) {
+                    cerrarModal();
+                }
+            }
+            
+            // Ctrl+Enter para enviar formulario activo
+            if (e.ctrlKey && e.key === 'Enter') {
+                const tabCuotas = document.getElementById('tabCuotas');
+                const tabFijos = document.getElementById('tabFijos');
+                
+                if (tabCuotas.classList.contains('active')) {
+                    document.getElementById('formCuotas').requestSubmit();
+                } else if (tabFijos.classList.contains('active')) {
+                    document.getElementById('formFijos').requestSubmit();
+                }
+            }
+        });
+
+        // MEJORA 2: Funciones para manejar el menú popover
+        function togglePopover(event, id) {
+            event.stopPropagation();
+            const popover = document.getElementById(`popover-${id}`);
+            const wasVisible = popover.classList.contains('show');
+            
+            // Cerrar todos los popovers
+            closeAllPopovers();
+            
+            // Toggle el actual
+            if (!wasVisible) {
+                popover.classList.add('show');
+            }
+        }
+
+        function closeAllPopovers() {
+            document.querySelectorAll('.popover').forEach(p => {
+                p.classList.remove('show');
+            });
+        }
+
+        // Cerrar popovers al hacer click fuera
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.more-menu')) {
+                closeAllPopovers();
+            }
+        });
 
         // Iniciar
         loadTheme();
